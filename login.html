@@ -15,13 +15,13 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link type="text/css" rel="stylesheet" href="login.css"/>
 
 
 </head>
 
 <body>
-    <div>test</div>
-    <h1>Welcome to Group 17's demo app</h1>
+    <h1>Let's get you started!</h1>
     <div id="firebaseui-auth-container"></div>
     <div id="loader">Loading...</div>
 
@@ -59,7 +59,7 @@
             },
             // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
             signInFlow: 'popup',
-            signInSuccessUrl: '<index.html>',
+            signInSuccessUrl: 'index.html',
             signInOptions: [
                 // Leave the lines as is for the providers you want to offer your users.
                 // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -70,9 +70,9 @@
                 // firebase.auth.PhoneAuthProvider.PROVIDER_ID
             ],
             // Terms of service url.
-            tosUrl: '<index.html>',
+            tosUrl: 'index.html',
             // Privacy policy url.
-            privacyPolicyUrl: '<index.html>'
+            privacyPolicyUrl: 'index.html'
         };
 
         // The start method will wait until the DOM is loaded.

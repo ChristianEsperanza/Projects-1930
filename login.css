@@ -1,0 +1,14 @@
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#firebaseui-auth-container {
+    width: 40vh;
+    display: block;
+    margin: 0 auto;
+    border-style: solid;
+    border-width: 20px;
+    border-radius: 30px 30px 30px 30px;
+    border-color: grey;
+}
