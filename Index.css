@@ -1,0 +1,27 @@
+html body{
+    width: 100%;
+    height: 100%;
+    
+}
+
+.user-icon{
+    font-size: 6rem;
+}
+
+.setting-icon{
+    font-size: 2rem;   
+}
+
+.jumbotron{
+    margin: 0;
+}
+
+.jumbotron .container h1{
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.upcoming-card{
+    justify-content: center;
+    align-items: center;
+}
