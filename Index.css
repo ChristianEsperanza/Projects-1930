@@ -4,6 +4,10 @@ html body{
     background: #e9ecef;
 }
 
+button i{
+    font-size: 2rem;
+}
+
 .user-icon{
     font-size: 6rem;
 }
