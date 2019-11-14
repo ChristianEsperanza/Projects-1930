@@ -22,40 +22,54 @@
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 
-    <!-- Optional styles and scripts of your own -->
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/script.js"></script>
-
     <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyAO3gHEPxIrZjCjGIquqIQEo4_8ZWnPIOk",
-        authDomain: "bcit-gym-buddies.firebaseapp.com",
-        databaseURL: "https://bcit-gym-buddies.firebaseio.com",
-        projectId: "bcit-gym-buddies",
-        storageBucket: "bcit-gym-buddies.appspot.com",
-        messagingSenderId: "682419343063",
-        appId: "1:682419343063:web:bfd1e51fca933bfe9f6a92"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      var db = firebase.firestore();
-    </script>
-
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyAO3gHEPxIrZjCjGIquqIQEo4_8ZWnPIOk",
+          authDomain: "bcit-gym-buddies.firebaseapp.com",
+          databaseURL: "https://bcit-gym-buddies.firebaseio.com",
+          projectId: "bcit-gym-buddies",
+          storageBucket: "bcit-gym-buddies.appspot.com",
+          messagingSenderId: "682419343063",
+          appId: "1:682419343063:web:bfd1e51fca933bfe9f6a92"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+      </script>
 </head>
 
 <body>
-<p>
-  just testing <span id='stuff'></span>
-</p>
 
-<script>
-  db.collection('event').doc('event').collection('sports').doc('sports').onSnapshot(function(snap){
-    console.log("Current data is...", snap.data());
-    document.getElementById('stuff').innerHTML = snap.data().position;
-    
-  });
-</script>
+  <form id='form'>
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" placeholder="Your Title">
+
+    <div class="botton">
+      <button type="submit">submit</button>
+    </div>
+  </form>
+    <script>
+
+      document.getElementById('form').addEventListener('submit', processForm);
+      function processForm(e){
+        e.preventDefault();
+
+        console.log("submit button clicked!")
+
+        var dbref = db.collection("event").doc("aa");
+        var item = document.getElementById('title').value;
+
+        console.log(item);
+
+        dbref.set({
+          title: item
+          
+        });
+      }
+  
+  
+  </script>
 </body>
 
 </html>
