@@ -6,11 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Personal info</title>
-    <link type="text/css" rel="stylesheet" href="/styles/personalInfo.css"/>
+    <link type="text/css" rel="stylesheet" href="/styles/personalInfo.css" />
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- <link type="text/css" rel="stylesheet" href="/styles/personalInfo.css"/> -->
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAO3gHEPxIrZjCjGIquqIQEo4_8ZWnPIOk",
+            authDomain: "bcit-gym-buddies.firebaseapp.com",
+            databaseURL: "https://bcit-gym-buddies.firebaseio.com",
+            projectId: "bcit-gym-buddies",
+            storageBucket: "bcit-gym-buddies.appspot.com",
+            messagingSenderId: "682419343063",
+            appId: "1:682419343063:web:bfd1e51fca933bfe9f6a92"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+    </script>
 </head>
 
 <body>
@@ -45,7 +66,7 @@
                     <div class="form-row mb-4">
                         <div class="col-sm-1"></div>
                         <div class="col-9">
-                            <input type="text" class="form-control" placeholder="Program Name">
+                            <input type="text" id="program" class="form-control" placeholder="Program Name">
                         </div>
                     </div>
 
@@ -54,7 +75,7 @@
                         <div class="col-sm-1"></div>
                         <label for="inputEmail3" class="col-2 col-form-label rounded">Age</label>
                         <div class="col-5"></div>
-                        <input type="number" min="17" max="99" placeholder="17" class="col-2 rounded">
+                        <input type="number" id="age" min="17" max="99" placeholder="17" class="col-2 rounded">
                     </div>
 
                     <!--Gender-->
@@ -62,7 +83,7 @@
                         <div class="col-sm-1"></div>
                         <label for="inputEmail3" class="col-2 col-form-label rounded">Gender</label>
                         <div class="col-5"></div>
-                        <input type="text" placeholder="Gender" class="col-2 rounded">
+                        <input type="text" id="gender" placeholder="Gender" class="col-2 rounded">
                     </div>
 
                     <!--Sport Selection-->
@@ -113,7 +134,7 @@
                 <!--Footer buttons-->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary" id="submit">Save changes</button>
                 </div>
             </div>
         </div>
