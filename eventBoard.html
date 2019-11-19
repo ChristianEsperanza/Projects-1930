@@ -46,8 +46,10 @@
 
 
 <script>
-db.collection('event').doc('fdfNm3fzBgn2g7JJlcin').onSnapshot(function(snap){
-  console.log("Current data is...", snap.data());
+  // Bring data from 'event' collection - 'eventRandomName' document
+  // eventRandomName will be random name. 
+db.collection('event').doc('eventRandomName').onSnapshot(function(snap){
+  // show only 'title' int the data in h1 tag named 'title'
   document.getElementById('title').innerHTML = snap.data().title;
 });
 
