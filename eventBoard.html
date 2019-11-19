@@ -46,9 +46,16 @@
 
 <body>
 
-  <h1 id='title' data-toggle="modal" data-target="#exampleModal"></h1>
-  <div id="date"></div>
-  <div id="admin"></div>
+
+  <div class="container-fluid mb-3">
+    <h1>Event Board</h1>
+  </div>
+
+  <div class="container-fluid ml-10">
+    <h3 id='title' data-toggle="modal" data-target="#exampleModal"></h3>
+    <div id="date"></div>
+    <div id="admin"></div>
+  </div>
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -73,14 +80,14 @@
   </div>
 
   <script>
-      db.collection('event').doc('fdfNm3fzBgn2g7JJlcin').onSnapshot(function (snap) {
-        console.log("Current data is...", snap.data());
-        document.getElementById('title').innerHTML = snap.data().title;
-        document.getElementById('date').innerHTML = snap.data().date.toDate();
-        document.getElementById('admin').innerHTML = snap.data().host;
-        document.getElementById('exampleModalLabel').innerHTML = snap.data().title;
-      });
-    </script>
+    db.collection('event').doc('fdfNm3fzBgn2g7JJlcin').onSnapshot(function (snap) {
+      console.log("Current data is...", snap.data());
+      document.getElementById('title').innerHTML = snap.data().title;
+      document.getElementById('date').innerHTML = snap.data().date.toDate();
+      document.getElementById('admin').innerHTML = snap.data().host;
+      document.getElementById('exampleModalLabel').innerHTML = snap.data().title;
+    });
+  </script>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
