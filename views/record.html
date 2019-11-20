@@ -9,39 +9,49 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="../styles/Index.css" type="text/css" />
+  <link rel="stylesheet" href="../styles/color.css" type="text/css" />
   <link rel="stylesheet" href="../styles/record.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+
 
   <title>Document</title>
 </head>
 
 <body>
-  <div id="header" class="container h-20 pb-2 pt-2">
-    <i class="fas fa-arrow-left text-white"></i>
-  </div>
+    <div id="header" class="container h-20 pb-2 pt-2">
+        <div class="row justify-content-between">
+            <i class="fas fa-arrow-left pl-3 pt-1 whiteFont" onclick="location.href='./account.html'"></i>
+            <p class="whiteFont font-weight-bold h3 ml-3">RECORD</p>
+            <i class="fas fa-cog setting-icon text-right pr-3 whiteFont"></i>
+        </div>
+        
+      </div>
 
 
-  <div class="container mb-2 bg-white record">
-      <i class="fas fa-arrow-left text-white"></i>
-
-  </div>
-
-  <div class="container bg-white record">
-      <i class="fas fa-arrow-left text-white"></i>
-
-  </div>
-
+      <div class="container font-weight-bold">
+        <div id="container"></div>
+        <div class="container mt-5 d-flex justify-content-center">
+            <button type="button" class="btn btn-warning">THIS MONTH</button>
+        </div>
+        <div id="progress"></div>
+        <div class="container mt-5 d-flex justify-content-center">
+            <button type="button" class="btn btn-warning">LAST MONTH</button>
+        </div>
+      </div>
+      
+     
 
   <div class="btn-group fixed-bottom" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-dark py-1">
-      <i class="far fa-calendar-check"></i>
-    </button>
-    <button type="button" class="btn btn-dark py-1">
-      <i class="fas fa-home"></i>
-    </button>
-    <button type="button" class="btn btn-secondary py-1">
-      <i class="fas fa-user-circle"></i>
-    </button>
-  </div>
+      <button type="button" class="btn btn-dark py-1">
+        <i class="far fa-calendar-check"></i>
+      </button>
+      <button type="button" class="btn btn-dark py-1" onclick="location.href='./Index.html'">
+        <i class="fas fa-home"></i>
+      </button>
+      <button type="button" class="btn btn-secondary py-1" onclick="location.href='./account.html'">
+        <i class="fas fa-user-circle"></i>
+      </button>
+    </div>
   </div>
 
   <!-- Jquery, Bootstrap CDN, Fontawesome CDN -->
@@ -55,6 +65,9 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/df012b2a98.js" crossorigin="anonymous"></script>
+  <script src="../scripts/progressbar.js"></script>
+  <script src="../scripts/chartOne.js"></script>
+  <script src="../scripts/chartTwo.js"></script>
 </body>
 
 </html>

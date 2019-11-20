@@ -10,9 +10,28 @@ body {
 }
 
 .record {
-  height: 35%;
+  height: 30%;
 }
 
 #settingIcon {
   color: #394582;
+}
+
+#container {
+  margin-left: 23%;
+  margin-top: 5%;
+  width: 200px;
+  height: 100px;
+}
+
+#progress {
+  margin-left: 23%;
+  margin-top: 15%;
+  width: 200px;
+  height: 100px;
+}
+
+.btn-warning{
+  background: #FFE977;
+  border: none;
 }
