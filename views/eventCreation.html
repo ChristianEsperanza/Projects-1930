@@ -21,6 +21,7 @@
   <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <link type="text/css" rel="stylesheet" href="../styles/eventCreation.css" />
 
   <script>
     // Your web app's Firebase configuration
@@ -40,78 +41,107 @@
 </head>
 
 <body>
+  <div id='top_bar' class="top_bar">
+    Gym Partner
+  </div>
   <div id="container" class="container">
-    <div id='top_bar' class="top_bar">
-      Gym Partner
-    </div>
-    <form id="form" class="form">
-      <div class="form-group">
-        <label for="inputTitle">Title</label>
-        <input type="title" class="form-control" id="inputTitle" placeholder="Your Title Here">
-      </div>
-      <div class="form-row">
-        <div class="col">
-          <label for="inputDate">Date</label>
-          <input type="date" class="form-control" id="inputDate">
-        </div>
-        <div class="col">
-          <label for="inputTime">What Time</label>
-          <select class="form-control" id="inputTime">
-            <option selected>00:00</option>
-            <option>00:30</option>
-            <option>01:00</option>
-            <option>01:30</option>
-            <option>02:00</option>
-            <option>02:30</option>
-            <option>03:00</option>
-            <option>03:30</option>
-            <option>04:00</option>
-            <option>04:30</option>
-            <option>05:00</option>
-            <option>05:30</option>
-            <option>06:00</option>
-            <option>06:30</option>
-            <option>07:00</option>
-            <option>07:30</option>
-            <option>08:00</option>
-            <option>08:30</option>
-            <option>09:00</option>
-            <option>09:30</option>
-            <option>10:00</option>
-            <option>10:30</option>
-            <option>11:00</option>
-            <option>11:30</option>
-          </select>
-        </div>
-        <div class="col">
-          <label for="inputAMPM">?</label>
-          <select id="inputAMPM" class="form-control">
-            <option selected>Choose...</option>
-            <option>AM</option>
-            <option>PM</option>
-          </select>
-        </div>
-      </div>
-      <br/>
-      <div class="form-group">
-        <label for="musclesInput">Where would you like to work out with your buddies?</label>
-        <select multiple class="form-control" id="musclesInput">
-          <option>Legs</option>
-          <option>Biceps</option>
-          <option>Triceps</option>
-          <option>Shoulders</option>
-          <option>Back</option>
-          <option>Core</option>
-          <option>Cardio</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1">Example textarea</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-      </div>
-    </form>
 
-    </form>
+    <div id="div_form" class="div_form">
+      <form>
+        <div class="form-group">
+          <label for="inputTitle">Title</label>
+          <input type="title" class="form-control" id="inputTitle" placeholder="Your Title Here">
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <label for="inputDate">Date</label>
+            <input type="date" class="form-control" id="inputDate">
+          </div>
+          <div class="col">
+            <label for="inputTime">Time</label>
+            <select class="form-control" id="inputTime">
+              <option selected>00:00</option>
+              <option>00:30</option>
+              <option>01:00</option>
+              <option>01:30</option>
+              <option>02:00</option>
+              <option>02:30</option>
+              <option>03:00</option>
+              <option>03:30</option>
+              <option>04:00</option>
+              <option>04:30</option>
+              <option>05:00</option>
+              <option>05:30</option>
+              <option>06:00</option>
+              <option>06:30</option>
+              <option>07:00</option>
+              <option>07:30</option>
+              <option>08:00</option>
+              <option>08:30</option>
+              <option>09:00</option>
+              <option>09:30</option>
+              <option>10:00</option>
+              <option>10:30</option>
+              <option>11:00</option>
+              <option>11:30</option>
+            </select>
+          </div>
+          <div class="col">
+            <label for="inputAMPM">blank</label>
+            <select id="inputAMPM" class="form-control">
+              <option selected>Choose...</option>
+              <option>AM</option>
+              <option>PM</option>
+            </select>
+          </div>
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="musclesInput">Where would you like to work out with your buddies?</label>
+          <select multiple class="form-control" id="musclesInput">
+            <option>Legs</option>
+            <option>Biceps</option>
+            <option>Triceps</option>
+            <option>Shoulders</option>
+            <option>Back</option>
+            <option>Core</option>
+            <option>Cardio</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>What is your skill level?</label> <br />
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="skillLevel" id="skill_beginner" value="option1">
+            <label class="form-check-label" for="skill_beginner">Beginner</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="skillLevel" id="skill_intermediate" value="option2">
+            <label class="form-check-label" for="skill_intermediate">Intermediate</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="skillLevel" id="skill_expert" value="option3">
+            <label class="form-check-label" for="skill_expert">Expert</label>
+          </div>
+        </div>
+
+        <div class="form-group" id="numOfBuddies">
+          <label for="select_numOfBuddies">How many bubdies are you looking for?</label><br>
+          <select class="select_numOfBuddies" id="select_numOfBuddies">
+            <option selected>Please select a number...</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="text_event">More details about the event?</label>
+          <textarea class="form-control" id="text_event" rows="3"></textarea>
+        </div>
+        <button type="button" class="btn btn-outline-secondary" id="button_submit">Submit</button>
+      </form>
+    </div>
+
   </div>
 
 
@@ -136,33 +166,7 @@
 
       });
     }
-
-    </script>
-
-      // create a form with submit event listener to send data to firebase
-      // this form will execute processForm when button clicked
-      document.getElementById('form').addEventListener('submit', processForm);
-      function processForm(e){
-        // prevent reload the page
-        e.preventDefault();
-
-        // check if the button clicked
-        console.log("submit button clicked!")
-
-        // declare variable to execute creating a data in firebase
-        // In 'event' collection, create data in a document named "eventRandomName"
-        var event = db.collection("event").doc("eventRandomName");
-
-        // Get text from input element named 'title'
-        var item = document.getElementById('title').value;
-
-        // Set data in firebase
-        event.set({
-          title: item
-        });
-      }
-  
-  
+  </script>
 </body>
 
 </html>
