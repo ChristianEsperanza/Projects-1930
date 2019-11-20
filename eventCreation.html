@@ -3,53 +3,141 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>My BCIT Project</title>
-    <meta name="comp1930 boilerplate code" content="my bcit project">
-    <meta name="author" content="BCIT">
+  <meta charset="utf-8">
+  <title>My BCIT Project</title>
+  <meta name="comp1930 boilerplate code" content="my bcit project">
+  <meta name="author" content="BCIT">
 
-    <!-- Bootstrap for Mobile-first -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Bootstrap for Mobile-first -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-          apiKey: "AIzaSyAO3gHEPxIrZjCjGIquqIQEo4_8ZWnPIOk",
-          authDomain: "bcit-gym-buddies.firebaseapp.com",
-          databaseURL: "https://bcit-gym-buddies.firebaseio.com",
-          projectId: "bcit-gym-buddies",
-          storageBucket: "bcit-gym-buddies.appspot.com",
-          messagingSenderId: "682419343063",
-          appId: "1:682419343063:web:bfd1e51fca933bfe9f6a92"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        var db = firebase.firestore();
-      </script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAO3gHEPxIrZjCjGIquqIQEo4_8ZWnPIOk",
+      authDomain: "bcit-gym-buddies.firebaseapp.com",
+      databaseURL: "https://bcit-gym-buddies.firebaseio.com",
+      projectId: "bcit-gym-buddies",
+      storageBucket: "bcit-gym-buddies.appspot.com",
+      messagingSenderId: "682419343063",
+      appId: "1:682419343063:web:bfd1e51fca933bfe9f6a92"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+  </script>
 </head>
 
 <body>
-
-  <form id='form'>
-    <label for="title">Title:</label>
-    <input type="text" id="title" name="title" placeholder="Your Title">
-
-    <div class="button">
-      <button type="submit">submit</button>
+  <div id="container" class="container">
+    <div id='top_bar' class="top_bar">
+      Gym Partner
     </div>
-  </form>
-    <script>
+    <form id="form" class="form">
+      <div class="form-group">
+        <label for="inputTitle">Title</label>
+        <input type="title" class="form-control" id="inputTitle" placeholder="Your Title Here">
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <label for="inputDate">Date</label>
+          <input type="date" class="form-control" id="inputDate">
+        </div>
+        <div class="col">
+          <label for="inputTime">What Time</label>
+          <select class="form-control" id="inputTime">
+            <option selected>00:00</option>
+            <option>00:30</option>
+            <option>01:00</option>
+            <option>01:30</option>
+            <option>02:00</option>
+            <option>02:30</option>
+            <option>03:00</option>
+            <option>03:30</option>
+            <option>04:00</option>
+            <option>04:30</option>
+            <option>05:00</option>
+            <option>05:30</option>
+            <option>06:00</option>
+            <option>06:30</option>
+            <option>07:00</option>
+            <option>07:30</option>
+            <option>08:00</option>
+            <option>08:30</option>
+            <option>09:00</option>
+            <option>09:30</option>
+            <option>10:00</option>
+            <option>10:30</option>
+            <option>11:00</option>
+            <option>11:30</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="inputAMPM">?</label>
+          <select id="inputAMPM" class="form-control">
+            <option selected>Choose...</option>
+            <option>AM</option>
+            <option>PM</option>
+          </select>
+        </div>
+      </div>
+      <br/>
+      <div class="form-group">
+        <label for="musclesInput">Where would you like to work out with your buddies?</label>
+        <select multiple class="form-control" id="musclesInput">
+          <option>Legs</option>
+          <option>Biceps</option>
+          <option>Triceps</option>
+          <option>Shoulders</option>
+          <option>Back</option>
+          <option>Core</option>
+          <option>Cardio</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Example textarea</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+    </form>
+
+    </form>
+  </div>
+
+
+
+  </div>
+
+  <script>
+    document.getElementById('form').addEventListener('submit', processForm);
+
+    function processForm(e) {
+      e.preventDefault();
+
+      console.log("submit button clicked!")
+
+      var dbref = db.collection("event").doc("aa");
+      var item = document.getElementById('title').value;
+
+      console.log(item);
+
+      dbref.add({
+        title: item
+
+      });
+    }
+
+    </script>
 
       // create a form with submit event listener to send data to firebase
       // this form will execute processForm when button clicked
@@ -75,7 +163,6 @@
       }
   
   
-  </script>
 </body>
 
 </html>
