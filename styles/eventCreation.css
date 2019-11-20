@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: teal;
+}
+
+#top_bar {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#div_form{
+  color: yellow;
+}
