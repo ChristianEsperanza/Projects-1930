@@ -10,59 +10,73 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="./styles/Index.css" type="text/css" />
   <link rel="stylesheet" href="./styles/account.css" type="text/css" />
+  <link rel="stylesheet" href="./styles/color.css" type="text/css" />
 
   <title>Document</title>
 </head>
 
 <body>
-  <div id="header" class="d-flex align-items-center container h-20 pb-2 pt-2">
-    <i class="fas fa-arrow-left"></i>
-    <!-- TODO: img to icon -->
-    <img id="settingIcon" class="ml-auto" src="./images/Settings.svg" alt="setting">
+  <div id="header" class="container h-20 pb-2 pt-2">
+    <div class="row justify-content-between">
+        <i class="fas fa-arrow-left pl-3" onclick="location.href='./Index.html'"></i>
+        <i class="fas fa-cog setting-icon text-right pr-3 defaultColor"></i>
+    </div>
+    
   </div>
 
-  <div class="container h-30 my-3 pl-4">
+  <div id="medalBox" class="container my-3 pl-4 pb-2 pt-2">
     <div class="row">
-      <i class="col-6 fas fa-medal"></i>
+      <i class="col-6 fas fa-medal defaultColor"></i>
       <div class="col-6">
-        <p class="lead">LEVEL 46</p>
+        <p class="lead defaultColor font-weight-bold text-center">LEVEL 46</p>
         <div>
-          <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0"
+          <div id="progressBarOutside" class="progress">
+            <div id="progressBarInside" class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="10" aria-valuemin="0"
               aria-valuemax="100">
-              250 / 1000
             </div>
           </div>
-          <p class="lead">EXPERT</p>
+          <p class="lead defaultColor font-weight-bold text-center mt-2">EXPERT</p>
         </div>
       </div>
     </div>
   </div>
 
-  <div id="settingBox" class="container h-50 px-0 mx-0">
-    <div class="card">
-      <div class="card-body">
-        This is some text within a card body.
-      </div>
-    </div>
+  <div id="settingBox" class="container px-0 mx-0 pb-5">
+      <div class="card">
+          <div class="card-body py-3">
+            <div class="row">
+              <i class="fas fa-signal h3 col-3 mb-0 mt-1 text-center"></i>
+              <p class="h3 col-9 text-center">RECORD</p>
+            </div>
+          </div>
+        </div>
 
-    <div class="card">
-      <div class="card-body">
-        This is some text within a card body.
-      </div>
-    </div>
+          <div class="card">
+              <div class="card-body py-3">
+                <div class="row">
+                  <i class="fas fa-cog h3 col-3 mb-0 mt-1 text-center"></i>
+                  <p class="h3 col-9 text-center">SETTING</p>
+                </div>
+              </div>
+            </div>
 
-    <div class="card">
-      <div class="card-body">
-        This is some text within a card body.
-      </div>
-    </div>
+            <div class="card">
+                <div class="card-body py-3">
+                  <div class="row">
+                    <i class="fas fa-question h3 col-3 mb-0 mt-1 text-center"></i>
+                    <p class="h3 col-9 text-center">HELP</p>
+                  </div>
+                </div>
+              </div>
 
-    <div class="card">
-      <div class="card-body">
-        This is some text within a card body.
-      </div>
-    </div>
+              <div class="card">
+                  <div class="card-body py-3">
+                    <div class="row">
+                      <i class="fas fa-user h3 col-3 mb-0 mt-1 text-center"></i>
+                      <p class="h3 text-danger col-9 text-center">SIGN OUT</p>
+                    </div>
+                  </div>
+                </div>
     
   </div>
 
@@ -71,10 +85,10 @@
     <button type="button" class="btn btn-dark py-1">
       <i class="far fa-calendar-check"></i>
     </button>
-    <button type="button" class="btn btn-dark py-1">
+    <button type="button" class="btn btn-dark py-1" onclick="location.href='./Index.html'">
       <i class="fas fa-home"></i>
     </button>
-    <button type="button" class="btn btn-secondary py-1">
+    <button type="button" class="btn btn-secondary py-1" onclick="location.href='./account.html'">
       <i class="fas fa-user-circle"></i>
     </button>
   </div>

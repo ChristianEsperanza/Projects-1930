@@ -16,10 +16,30 @@ body {
 
 #settingBox {
   background: #394582;
+  height: 55%;
+}
+
+#medalBox{
+  height: 25%;
 }
 
 .card {
   background: none;
   border-color: white;
+  border-left: none;
+  border-right: none;
+  border-width: 0.1rem;
   color: white;
+}
+
+#progressBarOutside{
+  border:#394582 2px solid;
+}
+
+#progressBarInside{
+  background:#394582 !important;
+}
+
+.options{
+  flex:1
 }
