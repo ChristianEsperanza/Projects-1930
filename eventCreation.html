@@ -136,6 +136,36 @@
 
       });
     }
+    <div class="button">
+      <button type="submit">submit</button>
+    </div>
+  </form>
+    <script>
+
+      // create a form with submit event listener to send data to firebase
+      // this form will execute processForm when button clicked
+      document.getElementById('form').addEventListener('submit', processForm);
+      function processForm(e){
+        // prevent reload the page
+        e.preventDefault();
+
+        // check if the button clicked
+        console.log("submit button clicked!")
+
+        // declare variable to execute creating a data in firebase
+        // In 'event' collection, create data in a document named "eventRandomName"
+        var event = db.collection("event").doc("eventRandomName");
+
+        // Get text from input element named 'title'
+        var item = document.getElementById('title').value;
+
+        // Set data in firebase
+        event.set({
+          title: item
+        });
+      }
+  
+  
   </script>
 </body>
 
