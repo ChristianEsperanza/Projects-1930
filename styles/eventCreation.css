@@ -1,12 +1,13 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: teal;
+  background-color: navy;
 }
 
 #top_bar {
   font-size: 2em;
   font-weight: bold;
+  background: white;
 }
 
 #div_form{
