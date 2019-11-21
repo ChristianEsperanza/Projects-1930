@@ -7,9 +7,10 @@ document.getElementById('submit').addEventListener("click", processForm);
 
         function processForm(e) {
             e.preventDefault();
-
+                //Sends message to console when user clicks submit
             console.log("submit button clicked!")
 
+                //Gets the values from the age, gender, and program of the user
             var dbref = db.collection("user").doc("test");
             var age = document.getElementById('age').value;
             var gender = document.getElementById('gender').value;
@@ -18,6 +19,7 @@ document.getElementById('submit').addEventListener("click", processForm);
             /* Printing to the log */
             console.log(age + " " + gender + " " + program);
 
+                //Writes the values from the user input into the database 
             dbref.set({
                 age: age,
                 gender: gender,

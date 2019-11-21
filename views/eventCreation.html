@@ -37,7 +37,6 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     var db = firebase.firestore();
-
   </script>
 </head>
 
@@ -100,28 +99,28 @@
         <div class="form-group">
           <label for="musclesInput">Where would you like to work out with your buddies?</label>
           <select multiple class="form-control" id="musclesInput">
-            <option>Legs</option>
-            <option>Biceps</option>
-            <option>Triceps</option>
-            <option>Shoulders</option>
-            <option>Back</option>
-            <option>Core</option>
-            <option>Cardio</option>
+            <option id="legs">Legs</option>
+            <option name="biceps" id="biceps">Biceps</option>
+            <option id="triceps">Triceps</option>
+            <option id="shoulders">Shoulders</option>
+            <option id="back">Back</option>
+            <option id="core">Core</option>
+            <option id="cardio">Cardio</option>
           </select>
         </div>
 
         <div class="form-group">
           <label>What is your skill level?</label> <br />
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="skillLevel" id="skill_beginner" value="option1">
+            <input class="form-check-input" type="radio" name="skillLevel" value="beginner" id="skill_beginner" value="option1">
             <label class="form-check-label" for="skill_beginner">Beginner</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="skillLevel" id="skill_intermediate" value="option2">
+            <input class="form-check-input" type="radio" name="skillLevel" value="intermediate" id="skill_intermediate" value="option2">
             <label class="form-check-label" for="skill_intermediate">Intermediate</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="skillLevel" id="skill_expert" value="option3">
+            <input class="form-check-input" type="radio" name="skillLevel" value="expert" id="skill_expert" value="option3">
             <label class="form-check-label" for="skill_expert">Expert</label>
           </div>
         </div>
@@ -142,12 +141,9 @@
         <button type="submit" class="btn btn-outline-secondary" id="button_submit">Submit</button>
       </form>
     </div>
-
   </div>
-
-
-
   </div>
+  <<script src="../scripts/eventCreation.js"></script>>
 </body>
 
 </html>
