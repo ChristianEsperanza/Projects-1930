@@ -1,0 +1,19 @@
+#medalImage {
+    height: 20vh;
+    width: 20vw;
+}
+
+#header .row .justify-content-between {
+    background-color: #394582;
+}
+
+body {
+    max-width: 100vw;
+    background-color: white;
+}
+
+.card {
+    background-color: #394582 !important;
+    color: #FFE977 !important;
+}
+
