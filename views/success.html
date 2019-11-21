@@ -12,11 +12,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/success.css" type="text/css" />
+    <link rel="stylesheet" href="../styles/Index.css" type="text/css" />
 
 </head>
 
 <body>
-    <!--Header with nav-->
+    <!--Header with back button and settings-->
     <div id="header" class="container-fluid h-20 pb-2 pt-2">
         <div class="row justify-content-between">
             <i class="fas fa-arrow-left pl-3 pt-1 defaultColor" onclick="location.href='./Index.html'"></i>
@@ -24,7 +25,9 @@
         </div>
     </div>
 
-    <div class="container-fluid text-center">You joined an event!</div>
+    <div class="container-fluid text-center">
+        <h1 id="eventJoinText" class="font-weight-bold"> You joined an event!</h1>
+    </div>
     <div class="text-center">
         <img src="../images/medal.svg" class="rounded" id="medalImage" alt="success">
     </div>
@@ -35,7 +38,7 @@
             <h5 class="card-title yellowColor font-weight-bold mb-0">Badminton Anyone?</h5>
             <div class="row">
                 <i class="fas fa-user white col-2 pt-1"></i>
-                <p class="card-text text-secondary font-weight-bold font-italic col-10 mb-2">posted by jayjay0190</p>
+                <p class="card-text text-white font-weight-bold col-10 mb-2"><small>posted by jayjay0190</small></p>
             </div>
 
             <hr class="m-0 mb-2">
@@ -57,19 +60,32 @@
     <div class="card defaultBackground col-12">
         <div class="row">
             <div class="container-fluid text-left">
-                <h5 class="text-left card-title yellowColor font-weight-bold mb-0 mt-3">Start chatting with your team</h5>
+                <h5 class="text-left card-title yellowColor font-weight-bold mb-0 mt-3">Start chatting with your team
+                </h5>
             </div>
         </div>
         <div class="row">
-                <img src="../images/user.svg" class="rounded ml-4" id="medalImage" alt="success">
-                <img src="../images/user.svg" class="rounded ml-4" id="medalImage" alt="success">
+            <!--This should import profile picture-->
+            <img src="../images/user.svg" class="rounded ml-4 userImage" alt="success">
+            <img src="../images/user.svg" class="rounded ml-4 userImage" alt="success">
         </div>
-
     </div>
 
+    <!--Footer-->
+        <div class="btn-group fixed-bottom" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-dark py-1" onclick="location.href='./Index.html'">
+                <i class="far fa-calendar-check"></i>
+            </button>
+            <button type="button" class="btn btn-secondary py-1" onclick="location.href='./Index.html'">
+                <i class="fas fa-home"></i>
+            </button>
+            <button type="button" class="btn btn-dark py-1" onclick="location.href='./account.html'">
+                <i class="fas fa-user-circle"></i>
+            </button>
+        </div>
 
 
-    <!--Bootstrap-->
+    <!--Bootstrap, jQuery, fontAwesome-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>

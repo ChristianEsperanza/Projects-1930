@@ -25,6 +25,19 @@ form .form-control{
     margin-left: 38%;
 }
 
+.btn-link:hover{
+    text-decoration: none;
+}
+
+.btn:hover{
+    color: white;
+    background: #394582;
+}
+
 .userIcon{
     font-size: 2rem;
 }
+
+textarea[readonly] {
+    background-color: white;
+  }
