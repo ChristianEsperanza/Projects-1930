@@ -13,9 +13,31 @@
   <link rel="stylesheet" href="../styles/record.css" type="text/css" />
   <link rel="stylesheet" href="../styles/thisMonthRecord.css" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 
 
   <title>Document</title>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAO3gHEPxIrZjCjGIquqIQEo4_8ZWnPIOk",
+      authDomain: "bcit-gym-buddies.firebaseapp.com",
+      databaseURL: "https://bcit-gym-buddies.firebaseio.com",
+      projectId: "bcit-gym-buddies",
+      storageBucket: "bcit-gym-buddies.appspot.com",
+      messagingSenderId: "682419343063",
+      appId: "1:682419343063:web:bfd1e51fca933bfe9f6a92"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+  </script>
+
 </head>
 
 <body>
@@ -29,7 +51,7 @@
       </div>
 
       <div class="container pb-5">
-          <div class="row">
+          <div id="eventId" class="row">
             <div class="card defaultBackground col-12">
                 <div class="card-body ml-5 pt-2 pb-2" onClick="location.href='./eventDetail.html'">
                   <h5 class="card-title yellowColor font-weight-bold mb-0">Badminton Anyone?</h5>
@@ -51,61 +73,11 @@
                   </div>
                   
                 </div>
-              </div>
-
-              <div class="card defaultBackground col-12">
-                <div class="card-body ml-5 pt-2 pb-2">
-                  <h5 class="card-title yellowColor font-weight-bold mb-0">Badminton Anyone?</h5>
-                  <div class="row">
-                    <i class="fas fa-user yellowColor col-2 pt-1"></i>
-                    <p class="card-text text-secondary font-weight-bold font-italic col-10 mb-2">posted by jayjay0190</p>
-                  </div>
-                  
-                  <hr class="m-0 mb-2">
-                  <div class="row">
-                    <i class="far fa-check-circle col-1 text-white pr-0 pt-1"></i>
-                    <p class="card-text whiteFont font-weight-bold mb-0 pl-3 col-11 pl-0">Today, 5:50 PM</p>
-                    <i class="far fa-check-circle col-1 text-white pr-0 pt-1"></i>
-                    <p class="card-text whiteFont font-weight-bold mb-0 pl-3 col-11 pl-0 ">Badminton</p>
-                    <i class="far fa-check-circle col-1 text-white pr-0 pt-1"></i>
-                    <p class="card-text whiteFont font-weight-bold mb-0 pl-3 col-11 pl-0">Intermediate</p>
-                    <i class="far fa-check-circle col-1 text-white pr-0 pt-1"></i>
-                    <p class="card-text whiteFont font-weight-bold mb-0 pl-3 col-11 pl-0">2/3 people</p>
-                  </div>
-                  
-                </div>
-              </div>
-
-              <div class="card defaultBackground col-12">
-                <div class="card-body ml-5 pt-2 pb-2">
-                  <h5 class="card-title yellowColor font-weight-bold mb-0">Badminton Anyone?</h5>
-                  <div class="row">
-                    <i class="fas fa-user yellowColor col-2 pt-1"></i>
-                    <p class="card-text text-secondary font-weight-bold font-italic col-10 mb-2">posted by jayjay0190</p>
-                  </div>
-                  
-                  <hr class="m-0 mb-2">
-                  <div class="row">
-                    <i class="far fa-check-circle col-1 text-white pr-0 pt-1"></i>
-                    <p class="card-text whiteFont font-weight-bold mb-0 pl-3 col-11 pl-0">Today, 5:50 PM</p>
-                    <i class="far fa-check-circle col-1 text-white pr-0 pt-1"></i>
-                    <p class="card-text whiteFont font-weight-bold mb-0 pl-3 col-11 pl-0 ">Badminton</p>
-                    <i class="far fa-check-circle col-1 text-white pr-0 pt-1"></i>
-                    <p class="card-text whiteFont font-weight-bold mb-0 pl-3 col-11 pl-0">Intermediate</p>
-                    <i class="far fa-check-circle col-1 text-white pr-0 pt-1"></i>
-                    <p class="card-text whiteFont font-weight-bold mb-0 pl-3 col-11 pl-0">2/3 people</p>
-                  </div>
-                  
-                </div>
-              </div>
-
+              </div>     
               
           </div>
+          
       </div>
-
-
-      
-      
      
 
   <div class="btn-group fixed-bottom" role="group" aria-label="Basic example">
@@ -132,9 +104,94 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/df012b2a98.js" crossorigin="anonymous"></script>
-  <script src="../scripts/progressbar.js"></script>
-  <script src="../scripts/chartOne.js"></script>
-  <script src="../scripts/chartTwo.js"></script>
+
+
+  <script>
+    db.collection("event").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
+        $('<div/>',{
+          appendTo:'#eventId',
+          id:doc.id,
+          addClass:'card defaultBackground col-12',
+        });
+        $('<div/>',{
+          id:doc.id+'card',
+          appendTo:'#'+doc.id,
+          addClass:'card-body ml-5 pt-2 pb-2',
+        });
+        $('<h5/>',{
+          appendTo:'#'+doc.id+'card',
+          addClass:'card-title yellowColor font-weight-bold mb-0',
+          text:doc.data().title
+        })
+        $('<div/>',{
+          id:doc.id+'secondDiv',
+          appendTo:'#'+doc.id+'card',
+          addClass:'row'
+        })
+        $('<i/>',{
+          appendTo:'#'+doc.id+'secondDiv',
+          addClass:'fas fa-user yellowColor col-2 pt-1',
+        })
+        $('<p/>',{
+          appendTo:'#'+doc.id+'secondDiv',
+          addClass:'card-text text-secondary font-weight-bold font-italic col-10 mb-2',
+          text:doc.id
+        })
+        $('<hr/>',{
+          appendTo:'#'+doc.id+'card',
+          addClass:'m-0 mb-2'
+        })
+        $('<div/>',{
+          id:doc.id+'thirdDiv',
+          appendTo:'#'+doc.id+'card',
+          addClass:'row'
+        }),
+        $('<i/>',{
+          appendTo:'#'+doc.id+'thirdDiv',
+          addClass:'far fa-check-circle col-1 text-white pr-0 pt-1',
+        })
+        $('<p/>',{
+          appendTo:'#'+doc.id+'thirdDiv',
+          addClass:'card-text whiteFont font-weight-bold mb-0 pl-3 col-11 pl-0',
+          text:doc.data().date+" , "+doc.data().time
+        })
+        $('<i/>',{
+          appendTo:'#'+doc.id+'thirdDiv',
+          addClass:'far fa-check-circle col-1 text-white pr-0 pt-1',
+        })
+        $('<p/>',{
+          appendTo:'#'+doc.id+'thirdDiv',
+          addClass:'card-text whiteFont font-weight-bold mb-0 pl-3 col-11 pl-0',
+          text:doc.data().message
+        })
+        $('<i/>',{
+          appendTo:'#'+doc.id+'thirdDiv',
+          addClass:'far fa-check-circle col-1 text-white pr-0 pt-1',
+        })
+        $('<p/>',{
+          appendTo:'#'+doc.id+'thirdDiv',
+          addClass:'card-text whiteFont font-weight-bold mb-0 pl-3 col-11 pl-0',
+          text:doc.data().date+" , "+doc.data().time
+        })
+        $('<i/>',{
+          appendTo:'#'+doc.id+'thirdDiv',
+          addClass:'far fa-check-circle col-1 text-white pr-0 pt-1',
+        })
+        $('<p/>',{
+          appendTo:'#'+doc.id+'thirdDiv',
+          addClass:'card-text whiteFont font-weight-bold mb-0 pl-3 col-11 pl-0',
+          text:doc.data().date+" , "+doc.data().time
+        })
+    });
+});
+
+  </script>
 </body>
 
 </html>
+
+
+
