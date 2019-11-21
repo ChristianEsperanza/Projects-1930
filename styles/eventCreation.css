@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: navy;
+  background-color: #394582;
 }
 
 #top_bar {
@@ -11,5 +11,13 @@ body {
 }
 
 #div_form{
-  color: yellow;
+  color: #FFE977;
+}
+
+.btn-outline-secondary{
+  margin: 0 auto;
+  color: #FFE977;
+  border-width: 3px;
+  border-color: #FFE977;
+  display: block;
 }
