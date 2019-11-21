@@ -37,6 +37,7 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     var db = firebase.firestore();
+
   </script>
 </head>
 
@@ -47,7 +48,7 @@
   <div id="container" class="container">
 
     <div id="div_form" class="div_form">
-      <form>
+      <form id="eventCreation" class="eventCreation">
         <div class="form-group">
           <label for="inputTitle">Title</label>
           <input type="title" class="form-control" id="inputTitle" placeholder="Your Title Here">
@@ -138,7 +139,7 @@
           <label for="text_event">More details about the event?</label>
           <textarea class="form-control" id="text_event" rows="3"></textarea>
         </div>
-        <button type="button" class="btn btn-outline-secondary" id="button_submit">Submit</button>
+        <button type="submit" class="btn btn-outline-secondary" id="button_submit">Submit</button>
       </form>
     </div>
 
@@ -147,26 +148,6 @@
 
 
   </div>
-
-  <script>
-    document.getElementById('form').addEventListener('submit', processForm);
-
-    function processForm(e) {
-      e.preventDefault();
-
-      console.log("submit button clicked!")
-
-      var dbref = db.collection("event").doc("aa");
-      var item = document.getElementById('title').value;
-
-      console.log(item);
-
-      dbref.add({
-        title: item
-
-      });
-    }
-  </script>
 </body>
 
 </html>
