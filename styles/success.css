@@ -1,6 +1,15 @@
 #medalImage {
-    height: 20vh;
-    width: 20vw;
+    height: 30vh;
+    width: 30vw;
+}
+
+.userImage {
+    height: 10vh;
+    width: 10vw;
+}
+
+#eventJoinText {
+    color: #394582;
 }
 
 #header .row .justify-content-between {
