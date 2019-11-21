@@ -112,15 +112,18 @@
         <div class="form-group">
           <label>What is your skill level?</label> <br />
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="skillLevel" value="beginner" id="skill_beginner" value="option1">
+            <input class="form-check-input" type="radio" name="skillLevel" value="beginner" id="skill_beginner"
+              value="option1">
             <label class="form-check-label" for="skill_beginner">Beginner</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="skillLevel" value="intermediate" id="skill_intermediate" value="option2">
+            <input class="form-check-input" type="radio" name="skillLevel" value="intermediate" id="skill_intermediate"
+              value="option2">
             <label class="form-check-label" for="skill_intermediate">Intermediate</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="skillLevel" value="expert" id="skill_expert" value="option3">
+            <input class="form-check-input" type="radio" name="skillLevel" value="expert" id="skill_expert"
+              value="option3">
             <label class="form-check-label" for="skill_expert">Expert</label>
           </div>
         </div>
@@ -138,12 +141,34 @@
           <label for="text_event">More details about the event?</label>
           <textarea class="form-control" id="text_event" rows="3"></textarea>
         </div>
-        <button type="submit" class="btn btn-outline-secondary" id="button_submit">Submit</button>
+        <button type="button" class="btn btn-outline-secondary" id="button_submit" data-toggle="modal"
+          data-target="#exampleModal">submit</button>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create an event?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                ArE YoU SUre??????
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
+                <button type="submit" class="btn btn-primary" id="button_yes">YES</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </form>
     </div>
   </div>
   </div>
-  <<script src="../scripts/eventCreation.js"></script>>
+  <script src="../scripts/eventCreation.js"> </script>
 </body>
 
 </html>
