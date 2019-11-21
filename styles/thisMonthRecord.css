@@ -1,0 +1,11 @@
+hr {
+    border: none;
+    width: 75%;
+    height: 3px;
+    color: #ffffff; /* old IE */
+    background-color: #ffffff; /* Modern Browsers */
+}
+
+.card{
+    border-color: #FFE977;
+}
