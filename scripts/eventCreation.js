@@ -1,8 +1,24 @@
+// $("#button_submit").click(function(e){
+//   e.preventDefault();
+//   console.log("in handler: clicked!");
+// });
 
-// document.getElementById('eventCreation').addEventListener('submit', processForm); <<<<<<<<Original line
-document.getElementById('eventCreation').addEventListener('click', processForm); //Changed to on click
 
-function processForm(e){
+
+
+//var values = $('#').val() -------------- for multi-selections
+//JSON object before writing it on the data base and print it right away.
+
+document.getElementById('eventCreation').addEventListener(submit, processForm);
+
+function processForm(event){
+  event.preventDefault();
+  console.log("Yes button clicked")
+  
+}
+
+
+function hah(e){
 
   e.preventDefault();
   console.log("Submit button click!")
@@ -15,6 +31,14 @@ function processForm(e){
   // var muscles = document.getElementById('musclesInput').value; <<<<<<Original line
   var numOfBuddies = document.getElementById('select_numOfBuddies').value;
   var message = document.getElementById('text_event').value;
+
+
+  // mBiceps = getElementById("#biceps");
+
+  // if (mBiceps.isChecked()) {
+  //   db.document("gym").collection("4gk10LflK4tT8yXnekNZ").document("targetMuscles").value(true);
+  // }
+
   var muscles = document.getElementById('musclesInput').value; //The line i was messing with
 
 /////////////////////////////////
@@ -39,6 +63,17 @@ function processForm(e){
   console.log(["event created", title, date, time + " " + ampm, numOfBuddies + " people can join the event", "More details: \n" + message]);
 
 
+  var event = db.collection("event");
 
+  event.add({
+    title: title,
+    date: date,
+    time: time + " " + ampm,
+    skillLevel: "ask Carly",
+    number: numOfBuddies,
+    message: message
+  });
+
+  console.log(["event created", title, date, time + " " + ampm, numOfBuddies + " people can join the event", "More details: \n" + message]);
 
 }

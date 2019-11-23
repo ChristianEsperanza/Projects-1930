@@ -21,3 +21,34 @@ body {
   border-color: #FFE977;
   display: block;
 }
+.modal-header {
+  border: none;
+  display: none;
+}
+
+.modal-body {
+  color: white;
+  border: none;
+  text-align: center;
+}
+
+.modal-footer {
+  border: none;
+  text-align: center;
+}
+
+.modal-content {
+  background-color: #394582;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #6c757d;
+  border: none;
+}
+
+.btn-primary {
+  background-color: white;
+  color: #394582;
+  border: none;
+}

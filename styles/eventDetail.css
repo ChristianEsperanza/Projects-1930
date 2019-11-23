@@ -37,3 +37,7 @@ form .form-control{
 .userIcon{
     font-size: 2rem;
 }
+
+textarea[readonly] {
+    background-color: white;
+  }
