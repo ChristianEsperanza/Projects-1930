@@ -11,6 +11,7 @@
 
 document.getElementById('eventCreation').addEventListener('submit', processForm);
 
+///////////////////////////////////////////////////////////////////////////
 /**
  * THIS IS CURRENTLY WORKING AND WRITES TO FIREBASE
  */
@@ -35,10 +36,8 @@ function processForm(event){
     message: message
   });
   console.log("Event created")
-
-  
 }
-
+/////////////////////////////////////////////////////////////////////////////
 
 function hah(e){
 
