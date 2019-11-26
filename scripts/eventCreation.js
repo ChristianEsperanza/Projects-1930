@@ -11,9 +11,31 @@
 
 document.getElementById('eventCreation').addEventListener('submit', processForm);
 
+/**
+ * THIS IS CURRENTLY WORKING AND WRITES TO FIREBASE
+ */
 function processForm(event){
   event.preventDefault();
-  console.log("Yes button clicked")
+  console.log("Yes button clicked")  
+  var event = db.collection("event");
+  var title = document.getElementById("inputTitle").value;
+  var date = document.getElementById('inputDate').value;
+  var time = document.getElementById('inputTime').value;
+  var ampm = document.getElementById('inputAMPM').value;
+  // var muscles = document.getElementById('musclesInput').value; <<<<<<Original line
+  var numOfBuddies = document.getElementById('select_numOfBuddies').value;
+  var message = document.getElementById('text_event').value;
+
+  event.add({
+    title: title,
+    date: date,
+    time: time,
+    ampm: ampm,
+    numOfBuddies: numOfBuddies,
+    message: message
+  });
+  console.log("Event created")
+
   
 }
 
@@ -69,7 +91,7 @@ function hah(e){
     title: title,
     date: date,
     time: time + " " + ampm,
-    skillLevel: "ask Carly",
+    skillLevel: "ask test",
     number: numOfBuddies,
     message: message
   });
