@@ -17,7 +17,7 @@
   <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-  
+
   <script>
     // Your web app's Firebase configuration
     var firebaseConfig = {
@@ -32,12 +32,6 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     var db = firebase.firestore();
-
-
-
-
-
-    
   </script>
 </head>
 
@@ -90,8 +84,27 @@
         </p>
       </div>
     </div>
-    <!--Fixed bottom Nav-->
-    <div class="btn-group fixed-bottom" role="group" aria-label="Basic example">
+    <div class="card mb-3 defaultBackground whiteFont">
+      <div class="card-header">Past Event</div>
+      <div class="card-body">
+        <h5 class="card-title yellowColor">Anyone Basketball?</h5>
+        <p class="card-text">
+          <i class="far fa-check-circle pr-1"></i>Last week, 4:30 PM
+        </p>
+      </div>
+    </div>
+    <div class="card mb-3 defaultBackground whiteFont">
+      <div class="card-header">Past Event</div>
+      <div class="card-body">
+        <h5 class="card-title yellowColor">Anyone Basketball?</h5>
+        <p class="card-text">
+          <i class="far fa-check-circle pr-1"></i>Last week, 4:30 PM
+        </p>
+      </div>
+    </div>
+
+
+  <div class="btn-group fixed-bottom" role="group" aria-label="Basic example">
       <button type="button" class="btn btn-dark py-1" onclick="location.href='./eventLists.html'">
         <i class="far fa-calendar-check"></i>
       </button>
@@ -103,6 +116,7 @@
       </button>
     </div>
   </div>
+
 
   <!-- Jquery, Bootstrap CDN, Fontawesome CDN -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
