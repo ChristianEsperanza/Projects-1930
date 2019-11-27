@@ -21,6 +21,7 @@ body {
   border-color: #FFE977;
   display: block;
 }
+
 .modal-header {
   border: none;
   display: none;
@@ -51,4 +52,10 @@ body {
   background-color: white;
   color: #394582;
   border: none;
+  font-weight: bold;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active, .show>.btn-outline-secondary.dropdown-toggle {
+  background-color: #FFE977;
+  color: #394582;
 }
