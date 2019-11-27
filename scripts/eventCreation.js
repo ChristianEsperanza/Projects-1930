@@ -10,7 +10,9 @@
 //var values = $('#').val() -------------- for multi-selections
 //JSON object before writing it on the data base and print it right away.
 
+
 document.getElementById('eventCreation').addEventListener("submit", processForm);
+
 
 function processForm(event){
   console.log("Yes button clicked")
