@@ -48,6 +48,20 @@
 
     <div id="div_form" class="div_form">
       <form id="eventCreation" class="eventCreation">
+
+        <div class="form-group">
+          <label>What is the event for?</label> <br />
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="eventSelection" value="sports" id="event_sports"
+              value="option1">
+            <label class="form-check-label" for="event_sports">Sports</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="eventSelection" value="gym" id="event_gym"
+              value="option2">
+            <label class="form-check-label" for="event_gym">Gym buddy</label>
+          </div>
+        </div>
         <div class="form-group">
           <label for="inputTitle">Title</label>
           <input type="title" class="form-control" id="inputTitle" placeholder="Your Title Here">
@@ -96,40 +110,15 @@
           </div>
         </div>
         <br />
-        <div class="form-group">
-          <label for="musclesInput">Where would you like to work out with your buddies?</label>
-          <select multiple class="form-control" id="musclesInput">
-            <option id="legs">Legs</option>
-            <option name="biceps" id="biceps">Biceps</option>
-            <option id="triceps">Triceps</option>
-            <option id="shoulders">Shoulders</option>
-            <option id="back">Back</option>
-            <option id="core">Core</option>
-            <option id="cardio">Cardio</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>What is your skill level?</label> <br />
-          <div class="form-check form-check-inline">
-
-            <input class="form-check-input" type="radio" name="skillLevel" value="beginner" id="skill_beginner"
-              value="option1">
-            <label class="form-check-label" for="skill_beginner">Beginner</label>
+        <div class="form-group" id="SkillLevel">
+            <label for="select_skillLevel">What is your skill level?</label><br>
+            <select class="select_skillLevel" id="select_skillLevel">
+              <option selected>Please select your level...</option>
+              <option value="1">Beginner</option>
+              <option value="2">Intermediate</option>
+              <option value="3">Expert</option>
+            </select>
           </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="skillLevel" value="intermediate" id="skill_intermediate"
-              value="option2">
-            <label class="form-check-label" for="skill_intermediate">Intermediate</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="skillLevel" value="expert" id="skill_expert"
-              value="option3">
-
-            <label class="form-check-label" for="skill_expert">Expert</label>
-          </div>
-        </div>
-
         <div class="form-group" id="numOfBuddies">
           <label for="select_numOfBuddies">How many bubdies are you looking for?</label><br>
           <select class="select_numOfBuddies" id="select_numOfBuddies">

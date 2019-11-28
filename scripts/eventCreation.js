@@ -1,7 +1,7 @@
-// $("#button_submit").click(function(e){
-//   e.preventDefault();
-//   console.log("in handler: clicked!");
-// });
+$("#button_submit").click(function(e){
+  e.preventDefault();
+  console.log("in handler: clicked!");
+});
 
 
 
@@ -15,12 +15,33 @@ document.getElementById('eventCreation').addEventListener("submit", processForm)
 
 
 function processForm(event){
-  console.log("Yes button clicked")
+
+  e.preventDefault();
   
+  console.log("Yes button clicked")
+  var title = document.getElementById("inputTitle").value;
+  var date = document.getElementById('inputDate').value;
+  var time = document.getElementById('inputTime').value;
+  var ampm = document.getElementById('inputAMPM').value;
+  var skillLevel = document.getElementById("select_skillLevel").value;
+  var numOfBuddies = document.getElementById('select_numOfBuddies').value;
+  var message = document.getElementById('text_event').value;
+
+  var event = db.collection("event");
+
+  event.add({
+    title: title,
+    date: date,
+    time: time + " " + ampm,
+    skillLevel: skillLevel,
+    number: numOfBuddies,
+    message: message
+  });
+  console.log(["event created", title, date, time + " " + ampm, numOfBuddies + " people can join the event", "More details: \n" + message]);
 }
 
 
-function hah(e){
+
 
 // function processForm(e){
 
@@ -29,40 +50,22 @@ function hah(e){
 //   console.log("Submit button click!")
 
  
-
+  
   var title = document.getElementById("inputTitle").value;
   var date = document.getElementById('inputDate').value;
   var time = document.getElementById('inputTime').value;
   var ampm = document.getElementById('inputAMPM').value;
-  // var muscles = document.getElementById('musclesInput').value; <<<<<<Original line
+  var skillLevel = document.getElementById("select_skillLevel").value;
   var numOfBuddies = document.getElementById('select_numOfBuddies').value;
   var message = document.getElementById('text_event').value;
 
-
-  // mBiceps = getElementById("#biceps");
-
-  // if (mBiceps.isChecked()) {
-  //   db.document("gym").collection("4gk10LflK4tT8yXnekNZ").document("targetMuscles").value(true);
-  // }
-
-  var muscles = document.getElementById('musclesInput').value; //The line i was messing with
-
-/////////////////////////////////
-  mBiceps = getElementById('input[name="biceps"]:checked').value;
-  var bicepEvent = db.collection("event").collection("gym").collection("targetMuscles").document("biceps");
-  
-  bicepEvent.add({
-    biceps: true
-  });
-//////////////////////////////////////
   var event = db.collection("event");
 
   event.add({
     title: title,
-    biceps: true,
     date: date,
     time: time + " " + ampm,
-    skillLevel: "ask Carly",
+    skillLevel: skillLevel,
     number: numOfBuddies,
     message: message
   });
