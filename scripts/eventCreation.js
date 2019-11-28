@@ -34,7 +34,7 @@ function processForm(e) {
   const func = async () => {
     // `displayName${i}`
     // 'displayName' + i
-    await event.doc(user.displayName+timeStamp).set({
+    await event.doc(user.displayName).set({
       title: title,
       date: date,
       time: time + " " + ampm,
@@ -42,7 +42,7 @@ function processForm(e) {
       number: numOfBuddies,
       message: message,
       user:user.displayName,
-      timeStamp: firebase.firestore.Timestamp.now(),
+      timeStamp: firebase.firestore.Timestamp.now(), //timestamp seconds
     });
   
     await window.location.assign("success_creating.html");
