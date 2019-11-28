@@ -19,7 +19,7 @@ function processForm(event){
   event.preventDefault();
   console.log("Yes button clicked")  
   var event = db.collection("event");
-  var title = document.getElementById("inputTitle").value;
+  var title = document.getElementById('inputTitle').value;
   var date = document.getElementById('inputDate').value;
   var time = document.getElementById('inputTime').value;
   var ampm = document.getElementById('inputAMPM').value;
