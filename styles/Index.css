@@ -5,6 +5,24 @@ body {
   background: #e9ecef;
 }
 
+#fatContainer {
+  height: 100%;
+}
+
+#fixedBottomCustom {
+  position: fixed;
+  bottom: 10vh;
+  right: 5vw;
+  float: right;
+}
+
+#fixedBottomCustom img {
+  border: 4px solid #394582;
+  border-radius: 50%;
+}
+
+
+
 button i {
   font-size: 2rem;
 }
