@@ -41,11 +41,12 @@ function processForm(e) {
       date: date,
       time: time + " " + ampm,
       skillLevel: skillLevel,
-      number: numOfBuddies,
+      maxNumber: numOfBuddies,
       message: message,
-      user:user.displayName,
+      host :user.displayName,
       docID: timeID, //timestamp seconds
-      timeStamp: firebase.firestore.Timestamp.now()
+      timeStamp: firebase.firestore.Timestamp.now(),
+      joined: 0,
     }).then(function(){
 
       //window.location.assign("success_creating.html");

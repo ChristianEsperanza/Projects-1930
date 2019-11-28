@@ -10,36 +10,65 @@
 //         }
 //         console.log(result);
 //         console.log(doc.data());
-        
+
 //     })
 // });
 
-function getEventByTimestamp(){
-  var queryString = decodeURIComponent(window.location.search);
-  var queries = queryString.split("?");
-  var timeID = queries[1];
+var queryString = decodeURIComponent(window.location.search);
+var queries = queryString.split("?");
+var timeID = queries[1];
+var justCreatedEvent = db.collection("event").where("docID", "==", timeID);
 
+function getEventByTimestamp() {
 
- // var FStimeID = firebase.firestore.Timestamp.fromDate(timeID); // ?? check 
+  // var FStimeID = firebase.firestore.Timestamp.fromDate(timeID); // ?? check 
 
   //console.log("inside getEventByTimestamp " + FStimeID);
 
-  db.collection("event").where("docID", "==", timeID).get().then(function(snap){
+  db.collection("event").where("docID", "==", timeID).get().then(function (snap) {
 
-      console.log(snap);
-      snap.forEach(function(doc){
-          console.log(doc.data());
-      })
+    console.log(snap);
+    snap.forEach(function (doc) {
+      console.log(doc.data());
+    })
   })
 
 }
+
+function displayLatestEventInfo() {
+
+  justCreatedEvent.get().then(function (snap) {
+    snap.forEach(function (doc) {
+      var title = doc.data().title;
+
+      var dateAndTime = doc.data().date + " at " + doc.data().time;
+
+      var skillLevel = doc.data().skillLevel;
+
+      var numOfPeople = doc.data().joined + "/" + doc.data().maxNumber;
+
+      console.log("title:", title);
+      console.log("date:", dateAndTime);
+      console.log("skill level", skillLevel);
+      console.log("how many people?", numOfPeople);
+
+      $('#eventTitle').append('<div>' + title + '</div>');
+      $('#dateAndTime').append('<div>' + dateAndTime + '</div>');
+      $('#skillLevel').append('<div>' + skillLevel + '</div>');
+      $('#numOfPeople').append(numOfPeople);
+    });
+  });
+}
+
+
 getEventByTimestamp();
+displayLatestEventInfo();
 
 
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function (user) {
   db.collection("user")
     .doc(user.uid)
-    .onSnapshot(function(snap) {
+    .onSnapshot(function (snap) {
       console.log(snap.data());
 
       //Customizes user index page to display the user's name which
