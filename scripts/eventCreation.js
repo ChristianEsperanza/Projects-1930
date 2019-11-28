@@ -34,7 +34,7 @@ function processForm(e) {
   const func = async () => {
     // `displayName${i}`
     // 'displayName' + i
-    await event.doc(user.displayName+date+title).set({
+    await event.doc(user.displayName+timeStamp).set({
       title: title,
       date: date,
       time: time + " " + ampm,
