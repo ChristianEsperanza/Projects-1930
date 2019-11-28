@@ -24,7 +24,7 @@ function getEventByTimestamp(){
 
   //console.log("inside getEventByTimestamp " + FStimeID);
 
-  db.collection("event").where("timeStamp", "==", timeID).get().then(function(snap){
+  db.collection("event").where("docID", "==", timeID).get().then(function(snap){
 
       console.log(snap);
       snap.forEach(function(doc){

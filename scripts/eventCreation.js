@@ -36,7 +36,7 @@ function processForm(e) {
     // 'displayName' + i
     var timeID = "doc" + firebase.firestore.Timestamp.now().toMillis();
     console.log("Milli: ", timeID)
-    event.add({
+    event.doc(timeID).set({
       title: title,
       date: date,
       time: time + " " + ampm,
@@ -44,7 +44,8 @@ function processForm(e) {
       number: numOfBuddies,
       message: message,
       user:user.displayName,
-      timeStamp: timeID //timestamp seconds
+      docID: timeID, //timestamp seconds
+      timeStamp: firebase.firestore.Timestamp.now()
     }).then(function(){
 
       //window.location.assign("success_creating.html");
