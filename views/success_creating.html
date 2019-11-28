@@ -14,6 +14,27 @@
     <link rel="stylesheet" href="../styles/success.css" type="text/css" />
     <link rel="stylesheet" href="../styles/Index.css" type="text/css" />
 
+    <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+              apiKey: "AIzaSyAO3gHEPxIrZjCjGIquqIQEo4_8ZWnPIOk",
+              authDomain: "bcit-gym-buddies.firebaseapp.com",
+              databaseURL: "https://bcit-gym-buddies.firebaseio.com",
+              projectId: "bcit-gym-buddies",
+              storageBucket: "bcit-gym-buddies.appspot.com",
+              messagingSenderId: "682419343063",
+              appId: "1:682419343063:web:bfd1e51fca933bfe9f6a92"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            var db = firebase.firestore();
+          </script>
 </head>
 
 <body>
@@ -25,11 +46,9 @@
         </div>
     </div>
     <div class="container-fluid text-center">
-<<<<<<< HEAD:views/success.html
-        <h1 id="eventJoinText" class="font-weight-bold inline"> You joined an event!</h1>
-=======
+
         <h1 id="eventJoinText" class="font-weight-bold"> You Created an Event!</h1>
->>>>>>> 27843d886b566ec1b180b99cf071b118d2cb044e:views/success_creating.html
+
     </div>
     <div class="text-center">
         <img src="../images/medal.svg" class="rowrounded" id="medalImage" alt="success">
@@ -60,7 +79,7 @@
     </div>
 
     <!--Team chat container-->
-    <div class="card defaultBackground col-12">
+    <div class="card defaultBackground col-12 mb-5">
         <div class="row">
             <div class="container-fluid text-left">
                 <h5 class="text-left card-title yellowColor font-weight-bold mb-0 mt-3">Start chatting with your team
@@ -103,7 +122,6 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script src="https://kit.fontawesome.com/df012b2a98.js" crossorigin="anonymous"></script>
-    <script src="../scripts/index.js"></script>
 </body>
 
 </html>
