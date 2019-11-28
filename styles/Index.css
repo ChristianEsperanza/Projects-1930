@@ -44,3 +44,9 @@ a {
 #buttonGroup{
   z-index:10;
 }
+
+.position-absolute {
+  font-size: 16pt;
+  right: 10;
+  bottom: 20;
+}

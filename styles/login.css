@@ -1,11 +1,14 @@
 
 #firebaseui-auth-container {
     width: 40vh;
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
     box-shadow: 0 0 5px 0 #28305A;
+    display: inline-block;
+    position: initial;
+    margin: 0 auto;
 }
 
 body {
@@ -14,14 +17,23 @@ body {
     background-size: 100vw 100vh;
 }
 
+#container {
+    grid-template-rows: 30% 70%;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 15vh;
+    transform: translateX(-50%);
+}
+
 #title {
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: italic;
     font-weight: bold;
     font-size: 38pt;
-    position: absolute;
-    top: 15%;
+    /* position: absolute;
+    top: 15%; */
     /*background-image: linear-gradient(rgb(175, 175, 49), rgb(255, 255, 255));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;*/

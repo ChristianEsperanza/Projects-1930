@@ -10,7 +10,9 @@ document
   .getElementById("eventCreation")
   .addEventListener("submit", processForm);
 
+
 function processForm(e) {
+
   e.preventDefault();
 
   console.log("Yes button clicked");
@@ -40,3 +42,4 @@ function processForm(e) {
 
   func();
 }
+
