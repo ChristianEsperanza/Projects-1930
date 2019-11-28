@@ -68,3 +68,14 @@ a {
   right: 10;
   bottom: 20;
 }
+
+/*this is to change the font for event list page*/
+.card-title {
+  font-family: 'Tomorrow', sans-serif;
+  font-weight: lighter;
+}
+
+.card-text {
+  font-family: 'Raleway';
+  font-weight: 400;
+}
