@@ -26,20 +26,28 @@ function processForm(e) {
 
   var event = db.collection("event");
 
+  var user = firebase.auth().currentUser;
+
+  
+
   const func = async () => {
-    await event.add({
+    // `displayName${i}`
+    // 'displayName' + i
+    await event.doc(user.displayName+date+title).set({
       title: title,
       date: date,
       time: time + " " + ampm,
       skillLevel: skillLevel,
       number: numOfBuddies,
-      message: message
+      message: message,
+      user:user.displayName
     });
-
   
     await window.location.assign("success_creating.html");
   };
 
   func();
+
+  
 }
 
