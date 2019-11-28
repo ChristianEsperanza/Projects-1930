@@ -139,7 +139,7 @@
         $('<p/>',{
           appendTo:'#'+doc.id+'secondDiv',
           addClass:'card-text text-secondary font-weight-bold font-italic col-10 mb-2',
-          text:doc.id
+          text:'posted by '+doc.data().user
         })
         $('<hr/>',{
           appendTo:'#'+doc.id+'card',
@@ -166,7 +166,7 @@
         $('<p/>',{
           appendTo:'#'+doc.id+'thirdDiv',
           addClass:'card-text whiteFont font-weight-bold mb-0 pl-3 col-11 pl-0',
-          text:doc.data().message
+          text:'Skill Level : '+doc.data().skillLevel
         })
         $('<i/>',{
           appendTo:'#'+doc.id+'thirdDiv',
