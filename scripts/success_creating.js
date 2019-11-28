@@ -14,6 +14,27 @@
 //     })
 // });
 
+function getEventByTimestamp(){
+  var queryString = decodeURIComponent(window.location.search);
+  var queries = queryString.split("?");
+  var timeID = queries[1];
+
+
+ // var FStimeID = firebase.firestore.Timestamp.fromDate(timeID); // ?? check 
+
+  //console.log("inside getEventByTimestamp " + FStimeID);
+
+  db.collection("event").where("timeStamp", "==", timeID).get().then(function(snap){
+
+      console.log(snap);
+      snap.forEach(function(doc){
+          console.log(doc.data());
+      })
+  })
+
+}
+getEventByTimestamp();
+
 
 firebase.auth().onAuthStateChanged(function(user) {
   db.collection("user")
@@ -24,5 +45,8 @@ firebase.auth().onAuthStateChanged(function(user) {
       //Customizes user index page to display the user's name which
       //Is stored in the database
       document.getElementById("username").innerHTML = snap.data().name;
+
+      //get details of 
+
     });
 });

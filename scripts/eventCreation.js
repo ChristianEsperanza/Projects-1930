@@ -34,7 +34,9 @@ function processForm(e) {
   const func = async () => {
     // `displayName${i}`
     // 'displayName' + i
-    await event.doc(user.displayName).set({
+    var timeID = "doc" + firebase.firestore.Timestamp.now().toMillis();
+    console.log("Milli: ", timeID)
+    event.add({
       title: title,
       date: date,
       time: time + " " + ampm,
@@ -42,10 +44,14 @@ function processForm(e) {
       number: numOfBuddies,
       message: message,
       user:user.displayName,
-      timeStamp: firebase.firestore.Timestamp.now(), //timestamp seconds
+      timeStamp: timeID //timestamp seconds
+    }).then(function(){
+
+      //window.location.assign("success_creating.html");
+      window.location.assign("success_creating.html?" + timeID);
+
     });
   
-    await window.location.assign("success_creating.html");
   };
 
   func();
