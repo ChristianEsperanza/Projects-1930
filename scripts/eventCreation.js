@@ -10,13 +10,7 @@ document
   .getElementById("eventCreation")
   .addEventListener("submit", processForm);
 
-  var title = document.getElementById("inputTitle").value;
-  var date = document.getElementById("inputDate").value;
-  var time = document.getElementById("inputTime").value;
-  var ampm = document.getElementById("inputAMPM").value;
-  var skillLevel = document.getElementById("select_skillLevel").value;
-  var numOfBuddies = document.getElementById("select_numOfBuddies").value;
-  var message = document.getElementById("text_event").value;
+  
   
 function processForm(e) {
 
@@ -29,7 +23,13 @@ function processForm(e) {
 
   var user = firebase.auth().currentUser;
 
-  
+  var title = document.getElementById("inputTitle").value;
+  var date = document.getElementById("inputDate").value;
+  var time = document.getElementById("inputTime").value;
+  var ampm = document.getElementById("inputAMPM").value;
+  var skillLevel = document.getElementById("select_skillLevel").value;
+  var numOfBuddies = document.getElementById("select_numOfBuddies").value;
+  var message = document.getElementById("text_event").value;
 
   const func = async () => {
     // `displayName${i}`
