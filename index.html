@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Include firebase related things-->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link type="text/css" rel="stylesheet" href="./styles/login.css" />
+    <link href="https://fonts.googleapis.com/css?family=Tomorrow:600,600i&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div id='title'>Chin-Goos</div>
+        <div id='subtitle' class="subtitle">Workout Together, <br />Stay Motivated</div>
+        <div id="firebaseui-auth-container"></div>
+        <div id="loader">Loading...</div>
+
+
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyAO3gHEPxIrZjCjGIquqIQEo4_8ZWnPIOk",
+                authDomain: "bcit-gym-buddies.firebaseapp.com",
+                databaseURL: "https://bcit-gym-buddies.firebaseio.com",
+                projectId: "bcit-gym-buddies",
+                storageBucket: "bcit-gym-buddies.appspot.com",
+                messagingSenderId: "682419343063",
+                appId: "1:682419343063:web:bfd1e51fca933bfe9f6a92"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
+        <script>
+            // Initialize the FirebaseUI Widget using Firebase.
+            var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+
+
+            var uiConfig = {
+                callbacks: {
+                    signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+
+                        // User successfully signed in.
+                        // Return type determines whether we continue the redirect automatically
+                        // or whether we leave that to developer to handle.
+                        return true;
+                    },
+                    uiShown: function () {
+                        // The widget is rendered.
+                        // Hide the loader.
+                        document.getElementById('loader').style.display = 'none';
+                    }
+                },
+                // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+                signInFlow: 'popup',
+                signInSuccessUrl: './views/Index.html',
+                signInOptions: [
+                    // Leave the lines as is for the providers you want to offer your users.
+                    // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                    // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                    // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+                    // firebase.auth.GithubAuthProvider.PROVIDER_ID,
+                    firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                    // firebase.auth.PhoneAuthProvider.PROVIDER_ID
+                ],
+                // Terms of service url.
+                tosUrl: './views/Index.html',
+                // Privacy policy url.
+                privacyPolicyUrl: './views/Index.html'
+            };
+
+
+            // The start method will wait until the DOM is loaded.
+            //Launches at div firebaseui-auth-container
+            ui.start('#firebaseui-auth-container', uiConfig);
+        </script>
+</body>
+
+</html>
