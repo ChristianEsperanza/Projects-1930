@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'soloist';
+  src: url('../fonts/soloist1-webfont.woff2') format('woff2'),
+    url('../fonts/soloist1-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Tomorrow:600i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Tomorrow:600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
+
 body {
   margin: 0;
   padding: 0;
@@ -10,11 +22,12 @@ body {
   background: white;
 }
 
-#div_form{
+#div_form {
   color: #FFE977;
+  font-family: 'work sans', sans-serif;
 }
 
-.btn-outline-secondary{
+.btn-outline-secondary {
   margin: 0 auto;
   color: #FFE977;
   border-width: 3px;
@@ -50,7 +63,9 @@ body {
   font-weight: bold;
 }
 
-.btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active, .show>.btn-outline-secondary.dropdown-toggle {
+.btn-outline-secondary:not(:disabled):not(.disabled).active,
+.btn-outline-secondary:not(:disabled):not(.disabled):active,
+.show>.btn-outline-secondary.dropdown-toggle {
   background-color: #FFE977;
   color: #394582;
 }
