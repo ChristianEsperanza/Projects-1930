@@ -1,32 +1,28 @@
-var db = firebase.database();
+// var result=1000;
+// var target;
 
-db.collection("event").onSnapshot(function(snapshot) {
-    snapshot.docChanges().forEach(function(change) {
-        if (change.type == "added") {
-            console.log("New Event: ", change.doc.data());
-        }
-    })
-});
-// function getEvent(event) {
-//     var db = db.collection(event).get().then(function(querySnapshot) {
-//         querySnapshot.forEach(function (doc) {
-//             var span = document.createElement("span");
-//             document.getElementById("eventTitle").appendChild(span);
-//             var node = document.createTextNode(doc.data().title);
-//             span.appendChild(node);
-//         });
-//     });
-// }
-// }
-
-
-firebase.auth().onAuthStateChanged(function(user){
-    db.collection('user').doc(user.uid).onSnapshot(function (snap){
-        console.log(snap.data());
+// db.collection("event").get().then(function(querySnapshot) {
+//     querySnapshot.forEach(function(doc) {
+//         if(result>doc.data().timeStamp){
+//             result
+//         } else{
+//             result =doc.data().timeStamp;
+//         }
+//         console.log(result);
+//         console.log(doc.data());
         
-            //Customizes user index page to display the user's name which
-            //Is stored in the database
-        document.getElementById("username").innerHTML = snap.data().name;
+//     })
+// });
+
+
+firebase.auth().onAuthStateChanged(function(user) {
+  db.collection("user")
+    .doc(user.uid)
+    .onSnapshot(function(snap) {
+      console.log(snap.data());
+
+      //Customizes user index page to display the user's name which
+      //Is stored in the database
+      document.getElementById("username").innerHTML = snap.data().name;
     });
-    
 });
