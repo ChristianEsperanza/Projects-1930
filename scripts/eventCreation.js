@@ -56,7 +56,18 @@ function processForm(e) {
   
   };
 
+  function setUserCreatedEvent() {
+
+    db.collection("user").where("email", "==", user.email).get().then(function (snap) {
+      console.log(snap);
+      snap.forEach(function (doc) {
+        console.log(doc.data());
+      });
+    });
+  }
+
   func();
+  setUserCreatedEvent();
 
   
 }
