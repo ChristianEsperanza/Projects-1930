@@ -12,7 +12,9 @@
      day = '0' + day.toString();
 
  var minDate = year + '-' + month + '-' + day;
+ var maxDate = (year + 1) + '-' + month + '-' + day;
  $('#inputDate').attr('min', minDate);
+ $('#inputDate').attr('max', maxDate);
 
 
 
