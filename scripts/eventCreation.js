@@ -65,7 +65,8 @@ function processForm(e) {
       skillLevel: skillLevel,
       maxNumber: numOfBuddies,
       message: message,
-      host :user.displayName,
+      host :user.email,
+      user: user.displayName,
       docID: timeID, //timestamp seconds
       timeStamp: firebase.firestore.Timestamp.now(),
       joined: 0,
@@ -77,16 +78,8 @@ function processForm(e) {
     });
   
   };
+  
 
-  function setUserCreatedEvent() {
-
-    db.collection("user").where("email", "==", user.email).get().then(function (snap) {
-      console.log(snap);
-      snap.forEach(function (doc) {
-        console.log(doc.data());
-      });
-    });
-  }
 
   func();
   setUserCreatedEvent();

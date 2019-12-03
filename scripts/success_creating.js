@@ -19,6 +19,26 @@ var queries = queryString.split("?");
 var timeID = queries[1];
 var justCreatedEvent = db.collection("event").where("docID", "==", timeID);
 
+  //store created event in the user collection field.
+  //DOESN'T WORK (yet) :(
+  function setUserCreatedEvent() {
+
+    var userCol = db.collection("user");
+    var user = firebase.auth().currentUser;
+    var uid = user.uid;
+
+    // db.collection("user").where("email", "==", user.email).get().then(function (snap) {
+      userCol.doc("kz1VUtFM2CZwe4ycMdmp3PJoT3j1").set({
+        created: db.collection("event").doc('event/' + timeID)
+      })
+
+    console.log("HIIII", data);
+
+
+  };
+
+
+
 function getEventByTimestamp() {
 
   // var FStimeID = firebase.firestore.Timestamp.fromDate(timeID); // ?? check 

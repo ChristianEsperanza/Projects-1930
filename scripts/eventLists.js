@@ -10,11 +10,11 @@ if(day < 10)
 var minDate = year + '-' + month + '-' + day;
 
 
-/**In progress **/
-/**Should end up only showing future events **/
-db.collection("event").orderBy("timestamp", "asc");
-db.collection("event").get().then(function(querySnapshot) {
-    querySnapshot.forEach(function(doc) {
+// /**In progress **/
+// /**Should end up only showing future events **/
+// db.collection("event").orderBy("timestamp", "asc");
+// db.collection("event").get().then(function(querySnapshot) {
+//     querySnapshot.forEach(function(doc) {
 
-    });
-});
+//     });
+// });
