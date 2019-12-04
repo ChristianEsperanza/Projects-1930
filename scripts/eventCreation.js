@@ -73,7 +73,8 @@ function processForm(e) {
       skillLevel: skillLevel,
       maxNumber: numOfBuddies,
       message: message,
-      host :user.displayName,
+      host :user.email,
+      user: user.displayName,
       docID: timeID, //timestamp seconds
       timeStamp: firebase.firestore.Timestamp.now(),
       joined: 0,
@@ -85,8 +86,11 @@ function processForm(e) {
     });
   
   };
+  
+
 
   func();
+  setUserCreatedEvent();
 
   
 }

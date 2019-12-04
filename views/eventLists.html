@@ -43,6 +43,7 @@
 </head>
 
 <body>
+  <!--Merge conflict commented out hard coded div? -->
   <!--Header containing the title and back button.-->
     <div id="header" class="container h-20 pb-1 pt-2 grayBackground">
         <div class="row justify-content-between">
@@ -95,83 +96,100 @@
         <i class="fas fa-user-circle"></i>
       </button>
     </div>
+
+  </div>
+
+
+  <div class="btn-group fixed-bottom" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-secondary py-1" onclick="location.href='./eventLists.html'">
+      <i class="far fa-calendar-check"></i>
+    </button>
+    <button type="button" class="btn btn-dark py-1" onclick="location.href='./Index.html'">
+      <i class="fas fa-home"></i>
+    </button>
+    <button type="button" class="btn btn-dark py-1" onclick="location.href='./account.html'">
+      <i class="fas fa-user-circle"></i>
+    </button>
+  </div>
   </div>
 
   <!-- Jquery, Bootstrap CDN, Fontawesome CDN -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
   <script src="https://kit.fontawesome.com/df012b2a98.js" crossorigin="anonymous"></script>
 
 
   <script>
-    /**Jay plz comment idk**/
+
     
-    db.collection("event").get().then(function(querySnapshot) {
-    querySnapshot.forEach(function(doc) {
+    // db.collection("event").get().then(function(querySnapshot) {
+    // querySnapshot.forEach(function(doc) {
+    db.collection("event").orderBy("timeStamp", "desc").get().then(function (querySnapshot) {
+      querySnapshot.forEach(function (doc) {
         // doc.data() is never undefined for query doc snapshots
         console.log(doc.id, " => ", doc.data());
-        $('<div/>',{
-          appendTo:'#eventId',
-          id:doc.id,
-          addClass:'card defaultBackground col-12',
+        $('<div/>', {
+          appendTo: '#eventId',
+          id: doc.id,
+          addClass: 'card defaultBackground col-12',
         });
-        $('<div/>',{
-          id:doc.id+'card',
-          appendTo:'#'+doc.id,
-          addClass:'card-body ml-5 pt-2 pb-2',
+        $('<div/>', {
+          id: doc.id + 'card',
+          appendTo: '#' + doc.id,
+          addClass: 'card-body ml-5 pt-2 pb-2',
         });
-        $('<h5/>',{
-          appendTo:'#'+doc.id+'card',
-          addClass:'card-title yellowColor font-weight-bold mb-0',
-          text:doc.data().title
+        $('<h5/>', {
+          appendTo: '#' + doc.id + 'card',
+          addClass: 'card-title yellowColor font-weight-bold mb-0',
+          text: doc.data().title
         })
-        $('<div/>',{
-          id:doc.id+'secondDiv',
-          appendTo:'#'+doc.id+'card',
-          addClass:'row'
+        $('<div/>', {
+          id: doc.id + 'secondDiv',
+          appendTo: '#' + doc.id + 'card',
+          addClass: 'row'
         })
-        $('<i/>',{
-          appendTo:'#'+doc.id+'secondDiv',
-          addClass:'fas fa-user yellowColor col-2 pt-1',
+        $('<i/>', {
+          appendTo: '#' + doc.id + 'secondDiv',
+          addClass: 'fas fa-user yellowColor col-2 pt-1',
         })
-        $('<p/>',{
-          appendTo:'#'+doc.id+'secondDiv',
-          addClass:'card-text text-secondary font-weight-bold font-italic col-10 mb-2',
-          text:'posted by '+doc.data().user
+        $('<p/>', {
+          appendTo: '#' + doc.id + 'secondDiv',
+          addClass: 'card-text text-secondary font-weight-bold font-italic col-10 mb-2',
+          text: 'posted by ' + doc.data().user
         })
-        $('<hr/>',{
-          appendTo:'#'+doc.id+'card',
-          addClass:'m-0 mb-2'
+        $('<hr/>', {
+          appendTo: '#' + doc.id + 'card',
+          addClass: 'm-0 mb-2'
         })
-        $('<div/>',{
-          id:doc.id+'thirdDiv',
-          appendTo:'#'+doc.id+'card',
-          addClass:'row'
-        }),
-        $('<i/>',{
-          appendTo:'#'+doc.id+'thirdDiv',
-          addClass:'far fa-check-circle col-1 text-white pr-0 pt-1',
+        $('<div/>', {
+            id: doc.id + 'thirdDiv',
+            appendTo: '#' + doc.id + 'card',
+            addClass: 'row'
+          }),
+          $('<i/>', {
+            appendTo: '#' + doc.id + 'thirdDiv',
+            addClass: 'far fa-check-circle col-1 text-white pr-0 pt-1',
+          })
+        $('<p/>', {
+          appendTo: '#' + doc.id + 'thirdDiv',
+          addClass: 'card-text whiteFont mb-0 pl-3 col-11 pl-0',
+          text: doc.data().date + " , " + doc.data().time
         })
-        $('<p/>',{
-          appendTo:'#'+doc.id+'thirdDiv',
-          addClass:'card-text whiteFont mb-0 pl-3 col-11 pl-0',
-          text:doc.data().date+" , "+doc.data().time
+        $('<i/>', {
+          appendTo: '#' + doc.id + 'thirdDiv',
+          addClass: 'far fa-check-circle col-1 text-white pr-0 pt-1',
         })
-        $('<i/>',{
-          appendTo:'#'+doc.id+'thirdDiv',
-          addClass:'far fa-check-circle col-1 text-white pr-0 pt-1',
-        })
-        $('<p/>',{
-          appendTo:'#'+doc.id+'thirdDiv',
-          addClass:'card-text whiteFont mb-0 pl-3 col-11 pl-0',
-          text:'Skill Level : '+doc.data().skillLevel
+        $('<p/>', {
+          appendTo: '#' + doc.id + 'thirdDiv',
+          addClass: 'card-text whiteFont mb-0 pl-3 col-11 pl-0',
+          text: 'Skill Level : ' + doc.data().skillLevel
         })
         // $('<i/>',{
         //   appendTo:'#'+doc.id+'thirdDiv',
@@ -191,14 +209,10 @@
         //   addClass:'card-text whiteFont font-weight-bold mb-0 pl-3 col-11 pl-0',
         //   text:doc.data().date+" , "+doc.data().time
         // })
+      });
     });
-});
-
   </script>
   <script src="/scripts/eventLists.js"></script>
 </body>
 
 </html>
-
-
-
