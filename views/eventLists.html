@@ -43,6 +43,7 @@
 </head>
 
 <body>
+  <!--Header containing the title and back button.-->
     <div id="header" class="container h-20 pb-1 pt-2 grayBackground">
         <div class="row justify-content-between">
             <i class="fas fa-arrow-left fa-lg pl-3 pt-1 defaultColor" onclick="location.href='./Index.html'"></i>
@@ -52,6 +53,7 @@
         
       </div>
 
+      <!--Divs that contain the event information.-->
       <div class="container pb-5">
           <div id="eventId" class="row">
             <div class="card defaultBackground col-12">
@@ -81,7 +83,7 @@
           
       </div>
      
-
+      <!--Fixed bottom footer menu.-->
   <div class="btn-group fixed-bottom" role="group" aria-label="Basic example">
       <button type="button" class="btn btn-secondary py-1" onclick="location.href='./eventLists.html'">
         <i class="far fa-calendar-check"></i>
@@ -109,6 +111,8 @@
 
 
   <script>
+    /**Jay plz comment idk**/
+    
     db.collection("event").get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
         // doc.data() is never undefined for query doc snapshots

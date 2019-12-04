@@ -1,3 +1,4 @@
+// I will not comment this -Christian
 // ProgressBar.js 1.1.0
 // https://kimmobrunfeldt.github.io/progressbar.js
 // License: MIT

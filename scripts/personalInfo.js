@@ -1,3 +1,6 @@
+/**
+ * Not currently on the app. Possible impending doom for this page.
+ */
 
 /**
  * Listens for user to click submit button, then it takes the specified 
