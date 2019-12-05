@@ -12,14 +12,16 @@
   <link rel="stylesheet" href="../styles/account.css" type="text/css" />
   <link rel="stylesheet" href="../styles/color.css" type="text/css" />
   <style>
-  body {
+    /**Body is given 110% height to compensate for the menu**/
+  /* body {
     height: 110%;
-  }
+  } */
   </style>
   <title>GYMBO</title>
 </head>
 
 <body>
+    <!--The top banner containing the back button-->
   <div id="header" class="container h-20 pb-2 pt-2">
     <div class="row justify-content-between">
         <i class="fas fa-arrow-left fa-lg pl-3 pt-1 defaultColor" onclick="location.href='./Index.html'"></i>
@@ -30,6 +32,7 @@
     
   </div>
 
+  <!--The main div containing the medal and level-->
   <div id="medalBox" class="container my-3 pl-4 pb-2 pt-2">
     <div class="row">
       <i class="col-6 fas fa-medal defaultColor"></i>
@@ -47,6 +50,7 @@
     </div>
   </div>
 
+  <!--Divs which correspond to other parts of the profile-->
   <div id="settingBox" class="container px-0 mx-0 pb-5">
       <div class="card" onclick="location.href='./record.html'">
           <div class="card-body py-3">
@@ -83,7 +87,7 @@
                     </div>
                   </div>
                 </div>
-  </div>
+  <!-- </div> -->
 
   <!--Extra div which adds a bit of height so the buttons are not obscured-->
   <!-- <div class="row" style="height: 45px">

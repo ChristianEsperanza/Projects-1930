@@ -48,15 +48,16 @@
 </head>
 
 <body>
+    <!--Banner containing the title and back button-->
     <div id="header" class="container h-20 pb-1 pt-2 grayBackground">
         <div class="row justify-content-between">
             <i class="fas fa-arrow-left pl-3 pt-1 defaultColor" onclick="location.href='./eventLists.html'"></i>
             <p class="defaultColor font-weight-bold h3 ml-3">CREATE EVENT</p>
             <i class="fas fa-cog setting-icon text-right pr-3 defaultColor"></i>
         </div>
-        
       </div>
 
+      <!--The form element. Each input element that is filled out will be written to Firebase-->
           <div id="div_form" class="div_form m-3 mb-5">
             <form id="eventCreation" class="eventCreation">
       
@@ -146,7 +147,10 @@
 
               <button type="button" class="btn btn-outline-secondary" id="button_submit" data-toggle="modal"
                 data-target="#exampleModal">Submit</button>
-      
+      <!--End form-->
+
+      <!--Modal that pops up to confirm if the user wants to create an event. Upon clicking yes, the 
+      event is written to Firebase and the user is directed to success_creating.html-->
               <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -176,7 +180,7 @@
       
       
      
-
+          <!--Fixed footer menu.-->
         <div class="btn-group fixed-bottom" role="group" aria-label="Basic example">
             <button type="button" class="btn btn-secondary py-1" onclick="location.href='./eventLists.html'">
               <i class="far fa-calendar-check"></i>

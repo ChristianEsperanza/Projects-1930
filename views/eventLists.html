@@ -43,40 +43,58 @@
 </head>
 
 <body>
-  <div id="header" class="container h-20 pb-1 pt-2 grayBackground">
-    <div class="row justify-content-between">
-      <i class="fas fa-arrow-left fa-lg pl-3 pt-1 defaultColor" onclick="location.href='./Index.html'"></i>
-      <p class="defaultColor font-weight-bold h3 ml-3">EVENTS</p>
-      <i class="fas fa-cog setting-icon text-right pr-3 defaultColor"></i>
-    </div>
-
-  </div>
-
-  <div class="container pb-5">
-    <div id="eventId" class="row">
-      <!-- <div class="card defaultBackground col-12">
-        <div class="card-body ml-5 pt-2 pb-2" onClick="location.href='./eventDetail.html'">
-          <h5 class="card-title yellowColor font-weight-bold mb-0">Badminton Anyone?</h5>
-          <div class="row">
-            <i class="fas fa-user yellowColor col-2 pt-1"></i>
-            <p class="card-text text-secondary font-weight-bold font-italic col-10 mb-2">posted by jayjay0190</p>
-          </div>
-
-          <hr class="m-0 mb-2">
-          <div class="row">
-            <i class="far fa-check-circle col-1 text-white pr-0 pt-1"></i>
-            <p class="card-text whiteFont mb-0 pl-3 col-11 pl-0">Today, 5:50 PM</p>
-            <i class="far fa-check-circle col-1 text-white pr-0 pt-1"></i>
-            <p class="card-text whiteFont mb-0 pl-3 col-11 pl-0 ">Badminton</p>
-            <i class="far fa-check-circle col-1 text-white pr-0 pt-1"></i>
-            <p class="card-text whiteFont mb-0 pl-3 col-11 pl-0">Intermediate</p>
-            <i class="far fa-check-circle col-1 text-white pr-0 pt-1"></i>
-            <p class="card-text whiteFont mb-0 pl-3 col-11 pl-0">2/3 people</p>
-          </div>
-
+  <!--Merge conflict commented out hard coded div? -->
+  <!--Header containing the title and back button.-->
+    <div id="header" class="container h-20 pb-1 pt-2 grayBackground">
+        <div class="row justify-content-between">
+            <i class="fas fa-arrow-left fa-lg pl-3 pt-1 defaultColor" onclick="location.href='./Index.html'"></i>
+            <p class="defaultColor font-weight-bold h3 ml-3">EVENTS</p>
+            <i class="fas fa-cog setting-icon text-right pr-3 defaultColor"></i>
         </div>
-      </div> -->
+        
+      </div>
 
+      <!--Divs that contain the event information.-->
+      <div class="container pb-5">
+          <div id="eventId" class="row">
+            <div class="card defaultBackground col-12">
+                <div class="card-body ml-5 pt-2 pb-2" onClick="location.href='./eventDetail.html'">
+                  <h5 class="card-title yellowColor font-weight-bold mb-0">Badminton Anyone?</h5>
+                  <div class="row">
+                    <i class="fas fa-user yellowColor col-2 pt-1"></i>
+                    <p class="card-text text-secondary font-weight-bold font-italic col-10 mb-2">posted by jayjay0190</p>
+                  </div>
+                  
+                  <hr class="m-0 mb-2">
+                  <div class="row">
+                    <i class="far fa-check-circle col-1 text-white pr-0 pt-1"></i>
+                    <p class="card-text whiteFont mb-0 pl-3 col-11 pl-0">Today, 5:50 PM</p>
+                    <i class="far fa-check-circle col-1 text-white pr-0 pt-1"></i>
+                    <p class="card-text whiteFont mb-0 pl-3 col-11 pl-0 ">Badminton</p>
+                    <i class="far fa-check-circle col-1 text-white pr-0 pt-1"></i>
+                    <p class="card-text whiteFont mb-0 pl-3 col-11 pl-0">Intermediate</p>
+                    <i class="far fa-check-circle col-1 text-white pr-0 pt-1"></i>
+                    <p class="card-text whiteFont mb-0 pl-3 col-11 pl-0">2/3 people</p>
+                  </div>
+                  
+                </div>
+              </div>     
+              
+          </div>
+          
+      </div>
+     
+      <!--Fixed bottom footer menu.-->
+  <div class="btn-group fixed-bottom" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary py-1" onclick="location.href='./eventLists.html'">
+        <i class="far fa-calendar-check"></i>
+      </button>
+      <button type="button" class="btn btn-dark py-1" onclick="location.href='./Index.html'">
+        <i class="fas fa-home"></i>
+      </button>
+      <button type="button" class="btn btn-dark py-1" onclick="location.href='./account.html'">
+        <i class="fas fa-user-circle"></i>
+      </button>
     </div>
 
   </div>
@@ -109,6 +127,10 @@
 
 
   <script>
+
+    
+    // db.collection("event").get().then(function(querySnapshot) {
+    // querySnapshot.forEach(function(doc) {
     db.collection("event").orderBy("timeStamp", "desc").get().then(function (querySnapshot) {
       querySnapshot.forEach(function (doc) {
         // doc.data() is never undefined for query doc snapshots

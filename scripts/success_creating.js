@@ -1,5 +1,10 @@
 
-//use queries to grab timeID
+/**
+ * After creation, the javascript will direct the user to this page
+ * but include a timestamp in the url. This function grabs the timestamp
+ * in the url and uses it to write the data in console.log and then grabs and 
+ * stores the values in the doc variable.
+ */
 var queryString = decodeURIComponent(window.location.search);
 var queries = queryString.split("?");
 var timeID = queries[1];
@@ -19,7 +24,11 @@ function getEventByTimestamp() {
 
 }
 
-//display just created info on the success page.
+/**
+ * This function takes the recently retrieved Firebase event data and 
+ * displays it back to the user in a container that is uniform with the 
+ * apps design.
+ */
 function displayLatestEventInfo() {
 
   justCreatedEvent.get().then(function (snap) {

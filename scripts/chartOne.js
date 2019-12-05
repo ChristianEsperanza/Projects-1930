@@ -1,3 +1,8 @@
+/**
+ * On opening the records page, the function targets the first container 
+ * and animates it corresponding to the progress made by the user.
+ */
+
 const container = document.querySelector("#container");
 
 var bar = new ProgressBar.SemiCircle(container, {
