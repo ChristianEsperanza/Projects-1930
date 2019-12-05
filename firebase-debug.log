@@ -1,0 +1,47 @@
+[debug] [2019-12-05T07:31:58.243Z] ----------------------------------------------------------------------
+[debug] [2019-12-05T07:31:58.245Z] Command:       C:\Apps\nodejs\node.exe C:\Users\roell\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-12-05T07:31:58.245Z] CLI Version:   7.9.0
+[debug] [2019-12-05T07:31:58.245Z] Platform:      win32
+[debug] [2019-12-05T07:31:58.245Z] Node Version:  v12.13.0
+[debug] [2019-12-05T07:31:58.254Z] Time:          Wed Dec 04 2019 23:31:58 GMT-0800 (Pacific Standard Time)
+[debug] [2019-12-05T07:31:58.254Z] ----------------------------------------------------------------------
+[debug] [2019-12-05T07:31:58.254Z] 
+[debug] [2019-12-05T07:31:58.261Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-12-05T07:31:58.262Z] > authorizing via signed-in user
+[debug] [2019-12-05T07:31:58.262Z] [iam] checking project bcit-gym-buddies for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-12-05T07:31:58.264Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-12-05T07:31:58.264Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-12-05T07:31:58.429Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-05T07:31:58.441Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/bcit-gym-buddies:testIamPermissions  
+
+[debug] [2019-12-05T07:31:58.599Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-05T07:31:58.600Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bcit-gym-buddies  
+ 
+[debug] [2019-12-05T07:31:58.815Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'bcit-gym-buddies'...
+[info] 
+[info] i  deploying firestore, hosting
+[info] i  firestore: reading indexes from firestore.indexes.json...
+[info] i  cloud.firestore: checking firestore.rules for compilation errors...
+[debug] [2019-12-05T07:31:58.820Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/bcit-gym-buddies:test  
+
+[debug] [2019-12-05T07:31:59.206Z] <<< HTTP RESPONSE 200
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully
+[debug] [2019-12-05T07:31:59.208Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/bcit-gym-buddies/versions  
+
+[debug] [2019-12-05T07:32:00.438Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-05T07:32:00.443Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/bcit-gym-buddies/releases?pageSize=10&pageToken=  
+ 
+[debug] [2019-12-05T07:32:00.444Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta2/projects/bcit-gym-buddies/databases/(default)/collectionGroups/-/indexes  
+ 
+[debug] [2019-12-05T07:32:00.828Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-05T07:32:00.829Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/bcit-gym-buddies/rulesets/074effdf-d2ae-4037-8396-15f14485e855  
+ 
+[debug] [2019-12-05T07:32:00.927Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-05T07:32:00.928Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta2/projects/bcit-gym-buddies/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false  
+ 
+[debug] [2019-12-05T07:32:01.163Z] <<< HTTP RESPONSE 200
+[info] i  firestore: latest version of firestore.rules already up to date, skipping upload...
+[debug] [2019-12-05T07:32:01.389Z] <<< HTTP RESPONSE 200

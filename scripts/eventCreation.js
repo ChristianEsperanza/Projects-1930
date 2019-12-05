@@ -79,7 +79,7 @@ function processForm(e) {
       joined: 0,
     }).then(function(){ 
 
-      //add time ID at the end of domain
+      //add timeID to url for a success
       window.location.assign("success_creating.html?" + timeID);
 
     });

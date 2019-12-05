@@ -21,6 +21,16 @@
     margin: 0 auto;
 }
 
+#logoImage {
+    width: 300px;
+}
+
+#workoutGIF {
+    width: 150px;
+    margin: 0 auto;
+    display: block;
+}
+
 body {
     background-image: linear-gradient(#394582 70%, #B5B9D0);
     background-repeat: no-repeat;
