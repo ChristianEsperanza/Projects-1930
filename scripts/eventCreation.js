@@ -52,10 +52,11 @@ function processForm(e) {
   var message = document.getElementById("text_event").value;
 
   const func = async () => {
-    // `displayName${i}`
-    // 'displayName' + i
+    //doc + milliseconds to make a unique ID.
     var timeID = "doc" + firebase.firestore.Timestamp.now().toMillis();
     console.log("Milli: ", timeID)
+
+    //create a new event
     event.doc(timeID).set({
       title: title,
       date: date,
@@ -70,7 +71,7 @@ function processForm(e) {
       joined: 0,
     }).then(function(){
 
-      //window.location.assign("success_creating.html");
+      //add time ID at the end of domain
       window.location.assign("success_creating.html?" + timeID);
 
     });
